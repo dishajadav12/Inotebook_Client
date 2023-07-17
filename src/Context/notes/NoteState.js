@@ -33,7 +33,7 @@ const NoteState = (props) => {
 
       body: JSON.stringify({ title, description, tag }),
     });
-    const json = response.json();
+    const json = await response.json();
     console.log(json);
 
     const note = {
@@ -53,7 +53,7 @@ const NoteState = (props) => {
     //API call
 
     const response = await fetch(`${host}/api/notes/updatenote/${id}`, {
-      method: "POST",
+      method: "PUT",
       mode: "cors",
       headers: {
         "Content-Type": "application/json",
@@ -63,18 +63,23 @@ const NoteState = (props) => {
 
       body: JSON.stringify({ title, description, tag }),
     });
-    const json = response.json();
-    console.log(json);
 
+    const json = await response.json();
+    console.log(json);
+    
+    let newNotes = JSON.parse(JSON.stringify(notes))
     //Logic to edit a note
-    for (let index = 0; index < notes.length; index++) {
-      const element = notes[index];
-      if (element.id === id) {
-        element.title = title;
-        element.description = description;
-        element.tag = tag;
+    for (let index = 0; index < newNotes.length; index++) {
+      const element = newNotes[index];
+      if (element._id === id) {
+        newNotes[index].title = title;
+        newNotes[index].description = description;
+        newNotes[index].tag = tag;
+        break;
+
       }
     }
+    setNotes(newNotes);
   };
 
   // Delete note
@@ -90,7 +95,7 @@ const NoteState = (props) => {
           "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRhYTYyMTNmYjBkOTJkZjhjOWU1YWI5In0sImlhdCI6MTY4ODg4ODAzMn0.3U7sE-H-DMQeqA2vBtAVKZO-Ohz-lQBKs25GmZF5wrQ",
       },
     });
-    const json = response.json();
+    const json = await response.json();
     console.log(json);
 
     const newNotes = notes.filter((note) => {

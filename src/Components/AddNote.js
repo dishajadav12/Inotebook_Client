@@ -5,10 +5,11 @@ const AddNote = () => {
   const context = useContext(NoteContext);
   const {addNote } = context;
   
-  const [note,setNotes] = useState({title: "", description: "", tag: ""})
+  const [note,setNotes] = useState({title: "", description: "", tag: "default"})
+
   const handleSubmit = (e) => {
     e.preventDefault();
-  addNote(note);
+    addNote(note.title, note.description,note.tag);
   };
   const onChange = (e) => {
     setNotes({...note, [e.target.name]: e.target.value});

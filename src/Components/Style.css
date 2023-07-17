@@ -1,0 +1,9 @@
+/* noteItem */
+.del-edit-btn{
+    cursor: pointer;
+}
+/* Alert */
+.close-btn-alert{
+    border: none;
+    background-color: transparent;
+}

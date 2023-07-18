@@ -5,11 +5,12 @@ const AddNote = () => {
   const context = useContext(NoteContext);
   const {addNote } = context;
   
-  const [note,setNotes] = useState({title: "", description: "", tag: "default"})
+  const [note,setNotes] = useState({title: "", description: "", tag: " "})
 
   const handleSubmit = (e) => {
     e.preventDefault();
     addNote(note.title, note.description,note.tag);
+    setNotes({title: "", description: "", tag: ""});
   };
   const onChange = (e) => {
     setNotes({...note, [e.target.name]: e.target.value});
@@ -27,6 +28,9 @@ const AddNote = () => {
             name="title"
             placeholder="Enter title"
             onChange={onChange}
+            minLength={5}
+            required
+            value={note.title}
           />
         </div>
         <div className="form-group my-3">
@@ -38,6 +42,9 @@ const AddNote = () => {
             name="description"
             placeholder="Write description"
             onChange={onChange}
+            minLength={5}
+            required
+            value={note.description}
           />
         </div>
         <div className="form-group my-3">
@@ -49,9 +56,10 @@ const AddNote = () => {
             name="tag"
             placeholder="ie. #general"
             onChange={onChange}
+            value={note.tag}
           />
         </div>
-        <button type="submit" className="btn btn-primary" onClick={handleSubmit}>
+        <button disabled={note.title.length<5 || note.description.length<5 } type="submit" className="btn btn-primary" onClick={handleSubmit}>
           Add Note
         </button>
       </form>

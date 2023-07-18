@@ -12,11 +12,13 @@ const Noteitem = (props) => {
     <div className="col-md-3">
       <div className="card my-3"  style={{width: "18rem"}}>
         <div className="card-body">
-          <div className="del-edit-btn d-flex align-items-center">
+          <div className="del-edit-btn d-flex justify-content-around">
               <h5 className="card-title">{note.title}</h5>
-              <FontAwesomeIcon icon={faTrashCan} className="delete" onClick={()=>{deleteNote(note._id)}} />
+              <div className="btn-ed d-flex justify-content-around ">
               <FontAwesomeIcon icon={faPenToSquare} className="edit mx-2" onClick={()=>{updateNotes(note)}} />
-
+              <FontAwesomeIcon icon={faTrashCan} className="delete " onClick={()=>{deleteNote(note._id)}} />
+              </div>
+             
           </div>
           <h6 className="card-subtitle mb-2 text-body-secondary">{note.date}</h6>
           <div className="card-text">

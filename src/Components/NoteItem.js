@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
-import NoteContext from "../Context/notes/noteContext";import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import NoteContext from "../Context/notes/noteContext";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import './Style.css';
 

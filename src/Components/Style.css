@@ -7,3 +7,7 @@
     border: none;
     background-color: transparent;
 }
+/* Navigation Bar */
+.navbar{
+    height: 60px;
+}

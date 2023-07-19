@@ -2,12 +2,17 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import NoteContext from "../Context/notes/noteContext";
 import NoteItem from "./NoteItem";
 import AddNote from "./AddNote";
-import './Style.css'
-const Notes = () => {
+import "./Style.css";
+const Notes = (props) => {
   const context = useContext(NoteContext);
   const { notes, getNotes, editNote } = context;
-  
-  const [note,setNotes] = useState({id: "",etitle: "", edescription: "", etag: ""})
+
+  const [note, setNotes] = useState({
+    id: "",
+    etitle: "",
+    edescription: "",
+    etag: "",
+  });
   useEffect(() => {
     getNotes();
     // eslint-disable-next-line
@@ -15,24 +20,29 @@ const Notes = () => {
   const ref = useRef(null);
   const refClose = useRef(null);
 
-
   const updateNotes = (currentNote) => {
     ref.current.click();
-    setNotes({id: currentNote._id, etitle: currentNote.title, edescription: currentNote.description, etag: currentNote.tag});
+    setNotes({
+      id: currentNote._id,
+      etitle: currentNote.title,
+      edescription: currentNote.description,
+      etag: currentNote.tag,
+    });
   };
 
   const handleSubmit = (e) => {
     editNote(note.id, note.etitle, note.edescription, note.etag);
-    refClose.current.click();    
+    refClose.current.click();
+    props.showAlert("Note updated successfully", "success");
   };
 
   const onChange = (e) => {
-    setNotes({...note, [e.target.name]: e.target.value});
+    setNotes({ ...note, [e.target.name]: e.target.value });
   };
 
   return (
     <>
-      <AddNote />
+      <AddNote showAlert={props.showAlert} />
       <div className="modal-container">
         <button
           ref={ref}
@@ -67,46 +77,46 @@ const Notes = () => {
               <div className="modal-body">
                 {/* FOrm */}
                 <form className="my-3">
-        <div className="form-group my-3">
-          <label htmlFor="etitle">Title</label>
-          <input
-            type="text"
-            className="form-control"
-            id="etitle"
-            name="etitle"
-            value={note.etitle}
-            placeholder="Enter title"
-            onChange={onChange}
-            minLength={5}
-            required
-          />
-        </div>
-        <div className="form-group my-3">
-          <label htmlFor="edescription">Description</label>
-          <input
-            type="text"
-            className="form-control"
-            id="edescription"
-            name="edescription"
-            value={note.edescription}
-            placeholder="Write description"
-            onChange={onChange}
-            minLength={5}
-            required
-          />
-        </div>
-        <div className="form-group my-3">
-          <label htmlFor="etag">Tag</label>
-          <input
-            type="text"
-            className="form-control"
-            id="etag"
-            name="etag"
-            value={note.etag}
-            placeholder="ie. #general"
-            onChange={onChange}
-          />
-        </div>
+                  <div className="form-group my-3">
+                    <label htmlFor="etitle">Title</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="etitle"
+                      name="etitle"
+                      value={note.etitle}
+                      placeholder="Enter title"
+                      onChange={onChange}
+                      minLength={5}
+                      required
+                    />
+                  </div>
+                  <div className="form-group my-3">
+                    <label htmlFor="edescription">Description</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="edescription"
+                      name="edescription"
+                      value={note.edescription}
+                      placeholder="Write description"
+                      onChange={onChange}
+                      minLength={5}
+                      required
+                    />
+                  </div>
+                  <div className="form-group my-3">
+                    <label htmlFor="etag">Tag</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="etag"
+                      name="etag"
+                      value={note.etag}
+                      placeholder="ie. #general"
+                      onChange={onChange}
+                    />
+                  </div>
                 </form>
               </div>
               <div className="modal-footer">
@@ -118,7 +128,14 @@ const Notes = () => {
                 >
                   Close
                 </button>
-                <button disabled={note.etitle.length<5 || note.edescription.length<5 } type="submit" className="btn btn-primary" onClick={handleSubmit} >
+                <button
+                  disabled={
+                    note.etitle.length < 5 || note.edescription.length < 5
+                  }
+                  type="submit"
+                  className="btn btn-primary"
+                  onClick={handleSubmit}
+                >
                   Update note
                 </button>
               </div>
@@ -129,11 +146,16 @@ const Notes = () => {
       <div className="row my-3">
         <h2>My Notes</h2>
         <div className="container mx-3 my-3">
-          {notes.length===0 && 'No notes to display'}
+          {notes.length === 0 && "No notes to display"}
         </div>
         {notes.map((note) => {
           return (
-            <NoteItem key={note._id} note={note} updateNotes={updateNotes} />
+            <NoteItem
+              key={note._id}
+              note={note}
+              showAlert={props.showAlert}
+              updateNotes={updateNotes}
+            />
           );
         })}
       </div>

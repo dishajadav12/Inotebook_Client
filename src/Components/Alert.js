@@ -2,20 +2,17 @@ import React from "react";
 import './Style.css'
 
 const Alert = (props) => {
+  const message =(word)=>{
+    if (word==="danger"){
+      word= "Error";
+    }
+  }
   return (
-    <div>
-      <div className="alert alert-warning alert-dismissible fade show d-flex justify-content-between" role="alert" >
-        {props.message}
-        <button
-          type="button"
-          className="close-btn-alert"
-          data-dismiss="alert"
-          aria-label="Close"
-        >
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-    </div>
+    <div style ={{height:'50px'}}>
+   {props.alert && <div className={`alert alert-${props.alert.type} alert-dismissible fade show`} role="alert">
+        {message(props.alert.type)}:{props.alert.msg}
+</div>}
+</div>
   );
 };
 

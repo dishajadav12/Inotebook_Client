@@ -3,7 +3,7 @@ import NoteContext from "../Context/notes/noteContext";
 import './Style.css'
 
 
-const AddNote = () => {
+const AddNote = (props) => {
   const context = useContext(NoteContext);
   const {addNote } = context;
   
@@ -13,6 +13,8 @@ const AddNote = () => {
     e.preventDefault();
     addNote(note.title, note.description,note.tag);
     setNotes({title: "", description: "", tag: ""});
+    props.showAlert("Note added", "success");
+
   };
   const onChange = (e) => {
     setNotes({...note, [e.target.name]: e.target.value});

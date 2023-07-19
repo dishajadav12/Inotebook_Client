@@ -1,11 +1,18 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import './Style.css'
 
 
 const Navbar = () => {
+
+  const navigate = useNavigate();
+  const handleLogout =(e)=>{
+    e.preventDefault();
+    navigate('/login');
+    localStorage.removeItem('token');
+  }
   return (
     <div>
 
@@ -29,8 +36,10 @@ const Navbar = () => {
         <button className="btn  mx-1" type="submit"><FontAwesomeIcon icon={faMagnifyingGlass} /></button>
       </form>
       <div className="auth-btn">
-      <Link className="btn btn-dark mx-1"  role='button' to='/login'>Login</Link>
-        <Link className="btn btn-primary mx-1" role='button' to="/signup">Sign up</Link>
+      {!localStorage.getItem('token') ? <form action=""> <Link className="btn btn-dark mx-1"  role='button' to='/login'>Login</Link>
+        <Link className="btn btn-primary mx-1" role='button' to="/signup">Sign up</Link> 
+        </form>: 
+        <Link className="btn btn-dark mx-1" role='button' onClick={handleLogout}>Log Out</Link>}
       </div>
 
     </div>

@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import {Canvas} from "@react-three/fiber"
+import { OrbitControls, Sphere, MeshDistortMaterial} from "@react-three/drei"
+import Notes from './Notes1.png';
+import './authStyle.css';
 
 const Signup = (props) => {
   const [credentials, setCredentials] = useState({
@@ -37,10 +41,34 @@ const Signup = (props) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
   return (
-    <div>
-              <h2>Create an account to use to iNotebook</h2>
+    <div className="container d-flex justify-content-between">
+      <div className="design-container">
+    <h2 className="text-center">Collect Your Thoughts.</h2>
+    <img className="signup-img img-fluid" src={Notes} alt="Your any time note taker" />
 
-      <form onSubmit={handleSubmit}>
+      <div className="img-animation-container">
+        {/* 3d Modal */}
+        <Canvas camera={{fov:25, position:[1,1,5]}}>
+          <OrbitControls enableZoom={false} autoRotate />
+          <ambientLight intensity={1.5}/>
+          <directionalLight position={[3,2,1]} />
+          <Sphere args={[1,100,200]} scale={1}>
+          <MeshDistortMaterial
+           color="rgba(190, 129, 131, 0.1)"
+           attach="material"
+           distort={0.3}
+           speed={2}
+          />
+          </Sphere>
+        </Canvas>
+      </div>
+      <h6 className="text-center" style={{color: "#555"}}>Unlock the art of hassle-free note-taking, all for free!</h6>
+
+      </div>
+      <div className="signup-container">
+      <h2>  Sign up now to embark on your <br /> note-taking journey!</h2>
+
+      <form onSubmit={handleSubmit} className="auth-form">
         <div className="my-3">
           <label htmlFor="name" className="form-label">
             Name
@@ -49,6 +77,7 @@ const Signup = (props) => {
             type="text"
             className="form-control"
             value={credentials.name}
+            placeholder="Enter your name..."
             onChange={onChange}
             id="name"
             name="name"
@@ -64,13 +93,14 @@ const Signup = (props) => {
             className="form-control"
             id="email"
             name="email"
+            placeholder="Enter your email address..."
             value={credentials.email}
             onChange={onChange}
             aria-describedby="emailHelp"
             required
           />
           <div id="emailHelp" className="form-text">
-            We'll never share your email with anyone else.
+           <small> We'll never share your email with anyone else.</small>
           </div>
         </div>
         <div className="mb-3">
@@ -101,11 +131,14 @@ const Signup = (props) => {
             required
           />
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn signup-btn">
           Sign me Up
         </button>
       </form>
     </div>
+  
+    </div>
+
   );
 };
 

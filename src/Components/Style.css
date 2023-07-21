@@ -11,3 +11,17 @@
 .navbar{
     height: 60px;
 }
+.navbar-brand{
+    padding-top: 1%;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 28px;
+}
+.span-navbar-brand{
+    font-weight: 700;
+    color: rgb(190,129,131);
+}
+/* form position */
+.auth-form{
+    padding-top: 5%;
+    width: 70%;
+}

@@ -1,0 +1,52 @@
+.signup-container{
+    width: 40%;
+}
+.design-container{
+    width: 40%;
+}
+.form-control:focus {
+    border-color: rgb(190,129,131);
+    box-shadow: 0 0 0 0.1rem rgba(190, 129, 131, 0.25);
+} 
+/* button control */
+.signup-btn{
+    background-color:rgba(190, 129, 131,1);
+    color: white;
+    border: none;
+}
+.signup-btn:hover{
+    background-color:rgba(190, 129, 131, 0.9);
+    color: black;
+    border: none;
+}
+.login-btn{
+   background-color: rgb(38,50,56);
+   color: white;
+}
+.login-btn:hover{
+    background-color: rgba(38,50,56,0.8);
+    color: white;
+ }
+
+/* auth-design */
+.img-animation-container{
+    position: relative;
+    height: 500px;
+}
+.signup-img{
+    width: 30%;
+    position: absolute;
+    object-fit: contain;
+    margin-left: 1%;
+    animation: animate 2s infinite ease alternate;
+    z-index: 1;
+}
+@keyframes animate {
+    100%{
+        transform: translateY(10px);
+    }
+}
+.bottom-text{
+    padding-top: 7%;
+
+}

@@ -77,7 +77,6 @@ const Signup = (props) => {
             type="text"
             className="form-control"
             value={credentials.name}
-            placeholder="Enter your name..."
             onChange={onChange}
             id="name"
             name="name"
@@ -93,7 +92,6 @@ const Signup = (props) => {
             className="form-control"
             id="email"
             name="email"
-            placeholder="Enter your email address..."
             value={credentials.email}
             onChange={onChange}
             aria-describedby="emailHelp"

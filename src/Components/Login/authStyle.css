@@ -8,6 +8,9 @@
     border-color: rgb(190,129,131);
     box-shadow: 0 0 0 0.1rem rgba(190, 129, 131, 0.25);
 } 
+.form-control:focus:active {
+    background-color:none!important;
+  }
 /* button control */
 .signup-btn{
     background-color:rgba(190, 129, 131,1);

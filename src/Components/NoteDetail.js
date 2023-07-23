@@ -1,56 +1,66 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useState, useContext,useRef  } from "react";
 import NoteContext from "../Context/notes/noteContext";
-import { useNavigate } from "react-router-dom";
-import NoteItem from "./NoteItem";
-import './Style.css'
+import LeftNavbar from "./LeftNavbar/LeftNavbar";
+import NoteItem from "../Components/NoteItem";
+import "./Style.css";
+
 
 const NoteDetail = (props) => {
-    let navigate= useNavigate();
-    const context = useContext(NoteContext);
-    const { notes, getNotes, editNote } = context;
-    useEffect(() => {
-      if(!localStorage.getItem('token')){
-        navigate("/login");
-      }
-      else{
-    getNotes();
-    }
-      // eslint-disable-next-line
-    }, []);
+  const context = useContext(NoteContext);
+  const { notes,  editNote } = context;
 
-    const updateNotes = (currentNote) => {
-        ref.current.click();
-        setNotes({
-          id: currentNote._id,
-          etitle: currentNote.title,
-          edescription: currentNote.description,
-          etag: currentNote.tag,
-        });
-      };
-      const ref = useRef(null);
-      const refClose = useRef(null);
-    
-      const [note, setNotes] = useState({
-        id: "",
-        etitle: "",
-        edescription: "",
-        etag: "",
-      });
-    
-    
-    
-    
-      const handleSubmit = (e) => {
-        editNote(note.id, note.etitle, note.edescription, note.etag);
-        refClose.current.click();
-        props.showAlert("Note updated successfully", "success");
-      };
-    
-      const onChange = (e) => {
-        setNotes({ ...note, [e.target.name]: e.target.value });
-      };
+  const updateNotes = (currentNote) => {
+    ref.current.click();
+    setNotes({
+      id: currentNote._id,
+      etitle: currentNote.title,
+      edescription: currentNote.description,
+      etag: currentNote.tag,
+    });
+  };
+  const ref = useRef(null);
+  const refClose = useRef(null);
+
+  const [note, setNotes] = useState({
+    id: "",
+    etitle: "",
+    edescription: "",
+    etag: "",
+  });
+
+
+
+
+  const handleSubmit = (e) => {
+    editNote(note.id, note.etitle, note.edescription, note.etag);
+    refClose.current.click();
+    props.showAlert("Note updated successfully", "success");
+  };
+
+  const onChange = (e) => {
+    setNotes({ ...note, [e.target.name]: e.target.value });
+  };
+
   return (
-    <div className="row" >
+    <div className="container d-flex justify-content-start">
+      <div className="left-navbar">
+        <LeftNavbar/>
+      </div>
+      <div className="home-container mx-3">
+      <div className="container">
+          {notes.length === 0 && "No notes to display"}
+        </div>
+        {notes.map((note) => {
+          return (
+            <NoteItem
+              key={note._id}
+              note={note}
+              showAlert={props.showAlert}
+              updateNotes={updateNotes}
+            />
+          );
+        })}</div>
+          <div className="row" >
          <div className="modal-container">
         <button
           ref={ref}
@@ -151,22 +161,10 @@ const NoteDetail = (props) => {
           </div>
         </div>
       </div>
-        <div className="container">
-          {notes.length === 0 && "No notes to display"}
-        </div>
-        {notes.map((note) => {
-          return (
-            <NoteItem
-              key={note._id}
-              note={note}
-              showAlert={props.showAlert}
-              updateNotes={updateNotes}
-            />
-          );
-        })}
-        </div>
 
-  )
-}
+        </div>
+    </div>
+  );
+};
 
-export default NoteDetail
+export default NoteDetail;

@@ -35,7 +35,7 @@ function App() {
             <Route exact path='/about' element={<About/>}/>
             <Route exact path='/login' element={<Login showAlert={showAlert}/>}/>
             <Route exact path='/signup' element={<Signup showAlert={showAlert}/>}/>
-            <Route exact path='/notedetail' element={<NoteDetail showAlert={showAlert}/>}/>
+            <Route exact path='/notedetail/:noteId' element={<NoteDetail showAlert={showAlert}/>}/>
         </Routes>
         </div>  
     </BrowserRouter>

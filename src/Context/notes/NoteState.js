@@ -86,13 +86,27 @@ const NoteState = (props) => {
     });
     setNotes(newNotes);
   };
+  const noteDetail = async (id) => {
+    const response = await fetch(`${host}/api/notes/noteDetail/${id}`, {
+      method: "GET",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": localStorage.getItem('token') 
+         },
+    });
+    const json = await response.json();
+    setNotes(json);
+  };
+
   return (
     <NoteContext.Provider
-      value={{ notes, addNote, editNote, deleteNote, getNotes }}
+      value={{ notes, addNote, editNote, deleteNote, getNotes, noteDetail}}
     >
       {props.children}
     </NoteContext.Provider>
   );
+  
 };
 
 export default NoteState;

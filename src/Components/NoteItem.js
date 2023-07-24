@@ -1,13 +1,28 @@
 import React, { useContext } from "react";
 import NoteContext from "../Context/notes/noteContext";
+import { useParams, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrashCan, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
+import { faTrashAlt, faEdit } from "@fortawesome/free-solid-svg-icons";
 import "./Style.css";
 
-const Noteitem = (props) => {
+const NoteItem = (props) => {
   const context = useContext(NoteContext);
-  const { deleteNote } = context;
-  const { note, updateNotes } = props;
+  const navigate = useNavigate();
+  const { deleteNote, notes } = context;
+  const { noteId } = useParams();
+
+  // Find the note with the given ID
+  const selectedNote = notes.find((note) => note._id === noteId);
+
+  if (!selectedNote) {
+    return (
+      <div>
+        <h2>Note not found</h2>
+      </div>
+    );
+  }
+
+  const { title, description, tag, _id, date } = selectedNote;
 
   // Function to format the date in DD\MM\YYYY format
   const formatDate = (dateString) => {
@@ -27,49 +42,45 @@ const Noteitem = (props) => {
   };
 
   return (
-<div className="col-md-3">
+    <div className="col-md-3">
       <div className="card mx-3 my-3" style={{ width: "100%" }}>
         <div className="card-body">
           <div className="del-edit-btn d-flex justify-content-between">
-            <div className="card-title">{note.title}</div>
+            <div className="card-title">{title}</div>
             <div className="btn-ed d-flex justify-content-between ">
               <FontAwesomeIcon
-                icon={faPenToSquare}
+                icon={faEdit}
                 className="edit mx-2"
                 onClick={() => {
-                  updateNotes(note);
+                  props.updateNotes(selectedNote); // Pass the selectedNote directly
                 }}
               />
               <FontAwesomeIcon
-                icon={faTrashCan}
+                icon={faTrashAlt}
                 className="delete "
                 onClick={() => {
-                  deleteNote(note._id);
+                  deleteNote(_id);
                   props.showAlert("Note deleted successfully", "success");
+                  navigate('/');
                 }}
               />
             </div>
           </div>
           <hr className="hr-title" />
           <div className="d-flex justify-content-between">
-
-          <p className="card-subtitle date text-body-secondary">
-            {formatDate(note.date)}
-          </p>
-          <p className="card-subtitle date text-body-secondary">
-              {formatTime(note.date)}
+            <p className="card-subtitle date text-body-secondary">
+              {formatDate(date)}
             </p>
-            </div>
-
-          <div className="card-text">
-            {note.description}
+            <p className="card-subtitle date text-body-secondary">
+              {formatTime(date)}
+            </p>
           </div>
-            <p className="date-tag mb-2 text-body-secondary">{note.tag}</p>
-           
+          <div className="card-text">{description}</div>
+          <p className="date-tag mb-2 text-body-secondary">{tag}</p>
         </div>
       </div>
     </div>
   );
 };
 
-export default Noteitem;
+export default NoteItem;

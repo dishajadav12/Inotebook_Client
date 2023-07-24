@@ -1,5 +1,7 @@
 
-.title-container{
+.title-link{
+    text-decoration: none;
+    color: black;
     cursor: pointer;
- 
+
 }

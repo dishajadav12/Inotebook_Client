@@ -52,7 +52,7 @@ const AddNote = (props) => {
           <h4>Tags</h4>
           <input
             type="text"
-            className="form-control h-500"
+            className="form-control tag-input h-500"
             id="tag"
             name="tag"
             placeholder="add a tag"

@@ -42,12 +42,22 @@ const NoteItem = (props) => {
   };
 
   return (
-    <div className="col-md-3">
-      <div className="card mx-3 my-3" style={{ width: "100%" }}>
-        <div className="card-body">
-          <div className="del-edit-btn d-flex justify-content-between">
-            <div className="card-title">{title}</div>
-            <div className="btn-ed d-flex justify-content-between ">
+    <div className="detail-container note-detail-container ">
+          <div>
+            <h4 className="detail-title">{title}</h4>
+          </div>
+          <hr className="hr-title" />
+          <div className="d-flex justify-content-start">
+            <p className="card-subtitle date text-body-secondary">
+              {formatDate(date)}
+            </p>
+            <p className="card-subtitle date text-body-secondary">
+              {formatTime(date)}
+            </p>
+          </div>
+          <div className="card-text my-3">{description}</div>
+          <p className="date-tag mb-2 text-body-secondary">{tag}</p>
+          <div className="btn-ed d-flex justify-content-start my-3 ">
               <FontAwesomeIcon
                 icon={faEdit}
                 className="edit mx-2"
@@ -65,20 +75,6 @@ const NoteItem = (props) => {
                 }}
               />
             </div>
-          </div>
-          <hr className="hr-title" />
-          <div className="d-flex justify-content-between">
-            <p className="card-subtitle date text-body-secondary">
-              {formatDate(date)}
-            </p>
-            <p className="card-subtitle date text-body-secondary">
-              {formatTime(date)}
-            </p>
-          </div>
-          <div className="card-text">{description}</div>
-          <p className="date-tag mb-2 text-body-secondary">{tag}</p>
-        </div>
-      </div>
     </div>
   );
 };

@@ -16,8 +16,8 @@ const Navbar = () => {
   return (
     <div>
 
-    <nav className="navbar navbar-expand-lg bg-body-tertiary d-flex">
-  <div className="container-fluid container">
+    <nav className="navbar navbar-expand-lg d-flex">
+  <div className="container-fluid">
     <Link className="navbar-brand" to="/">
        i<span className='span-navbar-brand'>N</span>otebook
     </Link>

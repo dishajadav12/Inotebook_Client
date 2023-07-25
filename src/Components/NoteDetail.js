@@ -38,7 +38,7 @@ const NoteDetail = (props) => {
   };
 
   return (
-    <div className="container d-flex justify-content-start">
+    <div className="d-flex justify-content-start note-detail-container">
       <div className="left-navbar">
         <LeftNavbar />
       </div>
@@ -51,6 +51,7 @@ const NoteDetail = (props) => {
             />
 
       </div>
+
       <div className="row">
         <div className="modal-container">
           <button

@@ -7,13 +7,14 @@
     font-weight: 600;
 }
 .date{
-    margin-top: 1%;
+    margin: 1% 20% 1% 0;
     font-size: 11px;
     font-weight: 400;
 }
 .hr-title{
     margin: 0px;
     color: rgb(133, 89, 91);
+    width: 35%;
 }
 .card-text{
     padding-top: 1%;
@@ -39,11 +40,17 @@
 /* Navigation Bar */
 .navbar{
     height: 60px;
+    background-color: whitesmoke;
+    border-bottom: 1px solid rgb(231, 231, 231);
 }
 .navbar-brand{
-    padding-top: 1%;
+    padding-left: 2%;
+    padding-top: 0.5%;
     font-family: 'League Spartan', sans-serif;
     font-size: 28px;
+}
+.navbar-nav{
+    margin-left: 5%;
 }
 .span-navbar-brand{
     font-weight: 700;
@@ -51,7 +58,6 @@
 }
 /* form position */
 .auth-form{
-    padding-top: 5%;
     width: 70%;
 }
 .add-note-form{
@@ -59,6 +65,8 @@
     border-bottom: 1px solid rgb(212, 212, 212) !important;
     border-radius: 0%;
 }
+
+
 .add-note-form:focus {
     outline: none !important;
     border-bottom: 1px solid rgb(212, 212, 212) !important;
@@ -72,6 +80,9 @@
 } 
 .tag-label{
     padding-top: 20%;
+}
+.tag-input{
+    width: 20%;
 }
 .btn-addnote{
     background-color:rgba(190, 129, 131,1);
@@ -88,11 +99,41 @@
     color: white;
     border: none;
 }
+.delete-btn{
+    background-color:rgba(190, 129, 131,0.5);
+}
+.btn-light{
+    background-color: rgb(218, 218, 218);
+
+}
+.edit-delete-btn{
+    padding-top: 30%;
+}
 /* LeftNavbar */
 .left-navbar{
+    
     width: 15% !important;
+    /* background-color:rgba(190, 129, 131,0.3); */
+    /* background-color: whitesmoke; */
+    border-right:1px solid rgb(231, 231, 231);
 }
 .home-container{
     width: 100% !important;
-    margin-left: 20%;
+    margin-left: 30%;
+}
+.addnote-container{
+    padding-left: 1%;
+    height: 500px;
+}
+/* note detail */
+.detail-container{
+    display: inline-block;
+    padding:5% 0% 0% 1%;
+    width: 50%;
+}
+.detail-title{
+    border: none !important;
+}
+.note-detail-container{
+    height: 500px;
 }

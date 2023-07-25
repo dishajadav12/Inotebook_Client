@@ -1,7 +1,25 @@
+.main-container{
+    padding:10% 0 0 5%;
 
+}
 .title-link{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    cursor: pointer;
+}
+.add-note-option{
+    padding-left: 5%;
     text-decoration: none;
     color: black;
     cursor: pointer;
-
+}
+.plus-symbol{
+    margin-right: 3%;
+    width: 5%;
+}
+hr{
+    margin: 0;
+    color: rgb(196, 196, 196);
 }

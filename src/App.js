@@ -27,9 +27,8 @@ function App() {
     <NoteState>
     <BrowserRouter>
       <Navbar/>
-      <Alert alert={alert}/>
-
-      <div className="container">
+      {/* <Alert alert={alert}/> */}
+      <div className="route-container">
         <Routes>
             <Route exact path='/' element={<Home showAlert={showAlert}/>}/>
             <Route exact path='/about' element={<About/>}/>

@@ -41,7 +41,7 @@ const Signup = (props) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
   return (
-    <div className="container d-flex justify-content-between">
+    <div className="container d-flex justify-content-between log-sign-container">
       <div className="design-container">
     <h2 className="text-center">Collect Your Thoughts.</h2>
     <img className="signup-img img-fluid" src={Notes} alt="Your any time note taker" />

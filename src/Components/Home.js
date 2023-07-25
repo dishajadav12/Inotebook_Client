@@ -6,12 +6,13 @@ import './Style.css'
 const Home = (props) => {
   const {showAlert} = props;
   return (
-    <div className="container  d-flex justify-content-start">
+    <div className="d-flex justify-content-start">
             <div className="left-navbar">
         <LeftNavbar/>
       </div>
       <div className="home-container mx-3">
       <Notes showAlert={showAlert} />
+
       </div>
     </div>
   );

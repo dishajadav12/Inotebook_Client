@@ -35,7 +35,7 @@ const Login = (props) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
   return (
-    <div className="container d-flex justify-content-between">
+    <div className="container d-flex justify-content-between log-sign-container">
       <div className="login-container mt-2">
         <h2>Login to continue to i<span className='span-navbar-brand'>N</span>otebook
 </h2>

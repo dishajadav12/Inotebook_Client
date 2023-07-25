@@ -19,10 +19,10 @@ const Notes = (props) => {
 
   
   return (
-    <>
+    <div className="addnote-container">
       <AddNote showAlert={props.showAlert} />
     
-    </>
+    </div>
   );
 };
 

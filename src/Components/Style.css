@@ -7,14 +7,14 @@
     font-weight: 600;
 }
 .date{
-    margin: 1% 20% 1% 0;
+    margin: 1% 12% 1% 0;
     font-size: 11px;
     font-weight: 400;
 }
 .hr-title{
     margin: 0px;
-    color: rgb(133, 89, 91);
-    width: 35%;
+    color: rgb(174, 174, 174);
+    width: 20%;
 }
 .card-text{
     padding-top: 1%;
@@ -25,13 +25,8 @@
     margin-bottom: 0%;
     height: 20px;
 }
-.edit{
-    color: rgba(190, 129, 131,1);
-}
-.delete{
-    color: rgb(38,50,56);
 
-}
+
 /* Alert */
 .close-btn-alert{
     border: none;
@@ -42,6 +37,8 @@
     height: 60px;
     background-color: whitesmoke;
     border-bottom: 1px solid rgb(231, 231, 231);
+    box-shadow: 0px 1px 5px #00000033;
+
 }
 .navbar-brand{
     padding-left: 2%;
@@ -84,6 +81,11 @@
 .tag-input{
     width: 20%;
 }
+.btn-editnote{
+    background-color:rgba(190, 129, 131,0.8);
+    color: white;
+    border: none;
+}
 .btn-addnote{
     background-color:rgba(190, 129, 131,1);
     color: white;
@@ -96,6 +98,11 @@
 }
 .btn-addnote:hover{
     background-color:rgba(190, 129, 131,0.9);
+    color: white;
+    border: none;
+}
+.btn-editnote:hover{
+    background-color:rgba(190, 129, 131,0.6);
     color: white;
     border: none;
 }
@@ -113,27 +120,44 @@
 .left-navbar{
     
     width: 15% !important;
-    /* background-color:rgba(190, 129, 131,0.3); */
-    /* background-color: whitesmoke; */
     border-right:1px solid rgb(231, 231, 231);
+    height: 500px;
 }
 .home-container{
-    width: 100% !important;
     margin-left: 30%;
+    width: 80%;
 }
 .addnote-container{
-    padding-left: 1%;
+    padding: 1%;
     height: 500px;
 }
 /* note detail */
 .detail-container{
-    display: inline-block;
-    padding:5% 0% 0% 1%;
-    width: 50%;
+    display:block;
+    width: 90%;
+    padding: 3% 1%;
+    height: 500px;
+
 }
 .detail-title{
     border: none !important;
 }
 .note-detail-container{
-    height: 500px;
+    position: absolute;
+    width: 100%;
+    margin-top: 0%;
+}
+
+/* Alertbox */
+.alert-box{
+    float: right;
+    width: 20%;
+    margin:1%;
+    height: 60px;
+    z-index: 10;
+}
+.alert-container{
+    background-color:rgba(190, 129, 131,0.4) ;
+    border: 1px solid rgba(190, 129, 131,0.5);
+    border-radius: 15px 2px;
 }

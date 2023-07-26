@@ -1,5 +1,6 @@
 .log-sign-container{
-    margin-top: 3%;
+    position: absolute;
+    margin: 3% 0 0 6%;
 }
 .signup-container{
     width: 40%;
@@ -43,7 +44,7 @@
     width: 30%;
     position: absolute;
     object-fit: contain;
-    margin-left: 1%;
+    margin:2% 4%;
     animation: animate 2s infinite ease alternate;
     z-index: 1;
 }

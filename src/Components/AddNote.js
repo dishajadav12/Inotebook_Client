@@ -13,7 +13,7 @@ const AddNote = (props) => {
     e.preventDefault();
     addNote(note.title, note.description,note.tag);
     setNotes({title: "", description: "", tag: ""});
-    props.showAlert("Note added", "success");
+    props.showAlert("Note added!", "success");
 
   };
   const onChange = (e) => {

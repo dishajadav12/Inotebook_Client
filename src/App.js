@@ -21,13 +21,14 @@ function App() {
     })
     setTimeout(()=>{
      setAlert(null);
+     
     },2000);
  }
   return (
     <NoteState>
     <BrowserRouter>
       <Navbar/>
-      {/* <Alert alert={alert}/> */}
+      <Alert alert={alert}/>
       <div className="route-container">
         <Routes>
             <Route exact path='/' element={<Home showAlert={showAlert}/>}/>

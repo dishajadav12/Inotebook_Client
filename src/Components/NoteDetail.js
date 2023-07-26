@@ -6,7 +6,7 @@ import "./Style.css";
 
 const NoteDetail = (props) => {
   const context = useContext(NoteContext);
-  const {editNote,notes } = context;
+  const {editNote } = context;
 
   const updateNotes = (currentNote) => {
     ref.current.click();
@@ -42,7 +42,8 @@ const NoteDetail = (props) => {
       <div className="left-navbar">
         <LeftNavbar />
       </div>
-      <div className="home-container mx-3">
+      <div className="home-container mx-3"
+>
             <NoteItem
               key={note._id}
               note={note}

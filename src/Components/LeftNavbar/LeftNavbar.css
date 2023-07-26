@@ -9,6 +9,12 @@
     padding: 10px;
     cursor: pointer;
 }
+.title-link:hover{
+    display: block;
+    content: " ";
+    color: black;
+    font-weight:500 !important;
+  }
 .add-note-option{
     padding-left: 5%;
     text-decoration: none;

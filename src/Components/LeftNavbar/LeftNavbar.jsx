@@ -23,7 +23,7 @@ const LeftNavbar = () => {
       <div className="note-title-container my-3">
         {notes.map((note) => (
           <div key={note._id}>
-            <Link to={`/notedetail/${note._id}`} className="title-link">{note.title}</Link>
+            <Link to={`/notedetail/${note._id}`} className="title-link"  activeclass='active'>{note.title}</Link>
             <hr />
           </div>
         ))}

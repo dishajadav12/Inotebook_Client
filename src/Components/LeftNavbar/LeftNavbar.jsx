@@ -11,8 +11,7 @@ const LeftNavbar = () => {
   if (notes.length === 0) {
     return (
       <div className="main-container">
-        <div className="title-container">My Notes</div>
-        <div className="container">No notes to display</div>
+ <Link to="/" className="add-note-option"><FontAwesomeIcon icon={faPlus} className="plus-symbol" />Add note</Link>        <div className="container">No notes to display</div>
       </div>
     );
   }
@@ -21,7 +20,9 @@ const LeftNavbar = () => {
     <div className="main-container">
            <Link to="/" className="add-note-option"><FontAwesomeIcon icon={faPlus} className="plus-symbol" />Add note</Link>
       <div className="note-title-container my-3">
+
         {notes.map((note) => (
+
           <div key={note._id}>
             <Link to={`/notedetail/${note._id}`} className="title-link"  activeclass='active'>{note.title}</Link>
             <hr />

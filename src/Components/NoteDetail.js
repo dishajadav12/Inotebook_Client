@@ -38,11 +38,11 @@ const NoteDetail = (props) => {
   };
 
   return (
-    <div className="d-flex justify-content-start note-detail-container">
+    <div className="d-flex justify-content-start">
       <div className="left-navbar">
         <LeftNavbar />
       </div>
-      <div className="home-container mx-3"
+      <div className="note-detail-container mx-3"
 >
             <NoteItem
               key={note._id}

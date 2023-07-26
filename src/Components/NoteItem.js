@@ -42,7 +42,7 @@ const NoteItem = (props) => {
   };
 
   return (
-    <div className="detail-container ">
+    <div className="detail-container">
           <div>
             <h4 className="detail-title">{title}</h4>
           </div>

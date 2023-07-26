@@ -28,7 +28,6 @@ function App() {
     <NoteState>
     <BrowserRouter>
       <Navbar/>
-      <Alert alert={alert}/>
       <div className="route-container">
         <Routes>
             <Route exact path='/' element={<Home showAlert={showAlert}/>}/>
@@ -38,7 +37,10 @@ function App() {
             <Route exact path='/notedetail/:noteId' element={<NoteDetail showAlert={showAlert}/>}/>
         </Routes>
         </div>  
+        <Alert alert={alert}/>
+
     </BrowserRouter>
+
     </NoteState>
   );
 }

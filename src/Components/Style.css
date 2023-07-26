@@ -7,14 +7,14 @@
     font-weight: 600;
 }
 .date{
-    margin: 1% 12% 1% 0;
+    margin: 1% 15% 1% 0;
     font-size: 11px;
     font-weight: 400;
 }
 .hr-title{
     margin: 0px;
     color: rgb(174, 174, 174);
-    width: 20%;
+    width: 25%;
 }
 .card-text{
     padding-top: 1%;
@@ -58,6 +58,7 @@
     width: 70%;
 }
 .add-note-form{
+    margin-top: 10%;
     border: none !important;
     border-bottom: 1px solid rgb(212, 212, 212) !important;
     border-radius: 0%;
@@ -76,10 +77,10 @@
     outline: none !important;
 } 
 .tag-label{
-    padding-top: 20%;
+    padding-top: 100%;
 }
 .tag-input{
-    width: 20%;
+    width: 100%;
 }
 .btn-editnote{
     background-color:rgba(190, 129, 131,0.8);
@@ -123,17 +124,16 @@
     border-right:1px solid rgb(231, 231, 231);
     height: 500px;
 }
-.home-container{
-    margin-left: 30%;
+.note-detail-container{
     width: 80%;
 }
 .addnote-container{
     padding: 1%;
     height: 500px;
+    width: 100%;
 }
 /* note detail */
 .detail-container{
-    display:block;
     width: 90%;
     padding: 3% 1%;
     height: 500px;
@@ -142,22 +142,23 @@
 .detail-title{
     border: none !important;
 }
-.note-detail-container{
-    position: absolute;
-    width: 100%;
-    margin-top: 0%;
-}
 
 /* Alertbox */
 .alert-box{
-    float: right;
     width: 20%;
-    margin:1%;
+    margin:1% 0 0 40%;
     height: 60px;
     z-index: 10;
 }
+
 .alert-container{
     background-color:rgba(190, 129, 131,0.4) ;
-    border: 1px solid rgba(190, 129, 131,0.5);
-    border-radius: 15px 2px;
+    border: 1px solid rgba(190, 129, 131,0.45);
+    border-radius: 15px;
+    animation: fadeIn 2s ease ;
+
 }
+@keyframes fadeIn {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+ } 

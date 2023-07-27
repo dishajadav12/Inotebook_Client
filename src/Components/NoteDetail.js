@@ -133,7 +133,7 @@ const NoteDetail = (props) => {
                 <div className="modal-footer">
                   <button
                     type="button"
-                    className="btn btn-secondary"
+                    className="btn btn-dark"
                     data-bs-dismiss="modal"
                     ref={refClose}
                   >
@@ -144,7 +144,7 @@ const NoteDetail = (props) => {
                       note.etitle.length < 5 || note.edescription.length < 5
                     }
                     type="submit"
-                    className="btn btn-primary"
+                    className="btn btn-addnote"
                     onClick={handleSubmit}
                   >
                     Update note

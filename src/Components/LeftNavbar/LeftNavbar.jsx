@@ -35,7 +35,7 @@ const LeftNavbar = () => {
           <FontAwesomeIcon icon={faPlus} className="plus-symbol" />
           Add note
         </Link>
-        <div className="container">No notes to display</div>
+        <div className="container my-3 no-note-alert">No notes yet <br /> Unleash Your Thoughts...</div>
       </div>
     );
   }
@@ -52,7 +52,7 @@ const LeftNavbar = () => {
             <Link to={`/notedetail/${note._id}`} className="title-link" activeclass="active">
               {note.title}
             </Link>
-            <hr />
+            <hr className="hr-leftnav" />
           </div>
         ))}
       </div>

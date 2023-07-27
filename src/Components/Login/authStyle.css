@@ -22,8 +22,13 @@
     border: none;
 }
 .signup-btn:hover{
-    background-color:rgba(190, 129, 131, 0.9);
+    background-color:rgba(190, 129, 131, 0.8);
     color: black;
+    border: none;
+}
+.signup-btn:active{
+    background-color:rgba(190, 129, 131,0.2);
+    color: white;
     border: none;
 }
 .login-btn{

@@ -36,15 +36,15 @@ const AddNote = (props) => {
           />
         </div>
         <div className="form-group my-3">
-          <input
+          <textarea
             type="text"
             className="add-note-form-description"
             id="description"
             name="description"
-            placeholder="Write description here..."
+            placeholder=" Write description here..."
             onChange={onChange}
+            rows="12" 
             minLength={5}
-            required
             value={note.description}
           />
         </div>

@@ -58,10 +58,11 @@
     width: 70%;
 }
 .add-note-form{
-    margin-top: 10%;
+    margin-top: 7.8%;
     border: none !important;
     border-bottom: 1px solid rgb(212, 212, 212) !important;
     border-radius: 0%;
+    font-size: 25px;
 }
 
 
@@ -72,15 +73,23 @@
 .add-note-form-description{
     border: none !important;
     border-radius: 0%;
+    width: 600px;
+    resize: none;
+    overflow: scroll;
 }
+.add-note-form-description::-webkit-scrollbar {
+    display: none;
+  }
 .add-note-form-description:focus {
     outline: none !important;
+    border-radius: 5px;
+    background-color:rgb(245, 245, 245) ;
 } 
-.tag-label{
-    padding-top: 100%;
-}
+/* .tag-label{
+    padding-top: 10%;
+} */
 .tag-input{
-    width: 100%;
+    width: 50%;
 }
 .btn-editnote{
     background-color:rgba(190, 129, 131,0.8);
@@ -118,18 +127,38 @@
     padding-top: 30%;
 }
 /* LeftNavbar */
-.left-navbar{
-    
+.left-navbar {
     width: 15% !important;
-    border-right:1px solid rgb(231, 231, 231);
-    height: 500px;
+    border-right: 2px solid rgba(190, 129, 131,0.3);
+    height: 650px;
+    overflow: auto; 
+}
+
+.left-navbar::-webkit-scrollbar {
+    width: 4px; 
+}
+
+.left-navbar::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 8px; 
+}
+
+.left-navbar::-webkit-scrollbar-thumb:hover {
+    background-color: #555; 
+}
+
+.left-navbar::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    border-radius: 8px;
 }
 .note-detail-container{
     width: 80%;
 }
+.leftside-home-container{
+    height: 500px;
+}
 .addnote-container{
     padding: 1%;
-    height: 500px;
     width: 100%;
 }
 /* note detail */
@@ -154,12 +183,13 @@
 .alert-container{
     background-color:rgba(190, 129, 131,0.4) ;
     border: 1px solid rgba(190, 129, 131,0.45);
-    border-radius: 15px;
-    animation: fadeIn 3s ease ;
+    border-radius: 15px 0px 15px 0px;
+    animation: fadeIn 2s ease ;
 
 }
 @keyframes fadeIn {
     0% {opacity: 1;}
-    80% {opacity: 0.8;}
+    20% {opacity: 0.8;}
+    40% {opacity: 0.6;}
     100% {opacity: 0;}
  } 

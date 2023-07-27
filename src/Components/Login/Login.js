@@ -50,7 +50,7 @@ const Login = (props) => {
   return (
     <div className="container d-flex justify-content-between log-sign-container">
          
-          <LoadingBar color="#FF52A2" ref={loadingBar} />
+          <LoadingBar color="rgba(190, 129, 131,1)" ref={loadingBar} />
       <div className="login-container mt-2">
         <h2>Login to continue to i<span className='span-navbar-brand'>N</span>otebook
 </h2>

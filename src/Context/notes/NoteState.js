@@ -125,7 +125,7 @@ const NoteState = (props) => {
 
   return (
     <>
-    <LoadingBar color="#FF52A2" ref={loadingBar} />
+    <LoadingBar color="rgba(190, 129, 131,1)" ref={loadingBar} />
     <NoteContext.Provider
       value={{ notes, addNote, editNote, deleteNote, getNotes, loading,
         setLoadingTrue,

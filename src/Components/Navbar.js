@@ -1,7 +1,5 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import './Style.css'
 
 
@@ -33,13 +31,9 @@ const Navbar = () => {
           <Link className="nav-link" to="/about">About</Link>
         </div>
         </div>
-        <form className="d-flex" role="search">
-        <input className="form-control me-2" type="search" placeholder="Search " aria-label="Search"/>
-        <button className="btn  mx-1" type="submit"><FontAwesomeIcon icon={faMagnifyingGlass} /></button>
-      </form>
       <div className="auth-btn-container">
       {!localStorage.getItem('token') ? <form action=""> <Link className="btn login-btn mx-1 "  role='button' to='/login'>Login</Link>
-        <Link className="btn btn-primary mx-1 signup-btn" role='button' to="/signup">Sign up</Link> 
+        <Link className="btn mx-1 signup-btn" role='button' to="/signup">Sign up</Link> 
         </form>: 
         <Link className="btn btn-dark mx-1" role='button' onClick={handleLogout}>Log Out</Link>}
       </div>

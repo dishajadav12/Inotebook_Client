@@ -1,5 +1,6 @@
 .main-container{
     padding:10% 0 0 5%;
+    position: relative;
 
 }
 .title-link{
@@ -16,6 +17,8 @@
     font-weight:500 !important;
   }
 .add-note-option{
+    position: sticky;
+    position: -webkit-sticky;
     padding-left: 5%;
     text-decoration: none;
     color: black;
@@ -25,7 +28,13 @@
     margin-right: 3%;
     width: 5%;
 }
-hr{
+.hr-leftnav{
     margin: 0;
-    color: rgb(196, 196, 196);
+    color: rgb(153, 151, 151);
+
+}
+.no-note-alert{
+    color: rgb(153, 151, 151);
+    font-size: 14px;
+    font-weight: 400;
 }

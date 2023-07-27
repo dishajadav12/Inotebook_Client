@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import {Canvas} from "@react-three/fiber"
 import { OrbitControls, Sphere, MeshDistortMaterial} from "@react-three/drei"
 import Notes from './Notes1.png';
+import LoadingBar from "react-top-loading-bar";
 import './authStyle.css';
 
 const Signup = (props) => {
@@ -12,36 +13,49 @@ const Signup = (props) => {
     password: "",
     cpassword: "",
   });
+  const loadingBar = useRef(null);
   let navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://localhost:5000/api/auth/createuser", {
-      method: "POST",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: credentials.name,
-        email: credentials.email,
-        password: credentials.password,
-      }),
-    });
-    const json = await response.json();
-    console.log(json);
-    if (json.success) {
-      localStorage.setItem("token", json.authtoken);
-      navigate("/");
-      props.showAlert("Successfully Signed up!", "success");
-    } else {
-      props.showAlert("Invalid credentials", "danger");
+    try {
+      loadingBar.current.continuousStart(); // Show loading bar at the start of the API call
+  
+      const response = await fetch("http://localhost:5000/api/auth/createuser", {
+        method: "POST",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: credentials.name,
+          email: credentials.email,
+          password: credentials.password,
+        }),
+      });
+  
+      const json = await response.json();
+      console.log(json);
+  
+      if (json.success) {
+        localStorage.setItem("token", json.authtoken);
+        navigate("/");
+        props.showAlert("Successfully Signed up!", "success");
+      } else {
+        props.showAlert("Invalid credentials", "danger");
+      }
+    } catch (error) {
+      console.error("Error during sign up:", error);
+    } finally {
+      loadingBar.current.complete(); // Hide loading bar when API call is complete
     }
   };
+  
   const onChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
   return (
     <div className="container d-flex justify-content-between log-sign-container">
+        <LoadingBar color="#FF52A2" ref={loadingBar} />
       <div className="design-container">
     <h2 className="text-center">Collect Your Thoughts.</h2>
     <img className="signup-img img-fluid" src={Notes} alt="Your any time note taker" />

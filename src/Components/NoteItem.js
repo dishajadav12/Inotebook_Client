@@ -1,18 +1,32 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import NoteContext from "../Context/notes/noteContext";
 import { useParams, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt, faEdit } from "@fortawesome/free-solid-svg-icons";
+import Spinner from './Spinner/Spinner'
 import "./Style.css";
 
 const NoteItem = (props) => {
   const context = useContext(NoteContext);
   const navigate = useNavigate();
-  const { deleteNote, notes } = context;
+  const {  loading,setLoadingTrue,setLoadingFalse, deleteNote, notes } = context;
   const { noteId } = useParams();
+  
 
   // Find the note with the given ID
   const selectedNote = notes.find((note) => note._id === noteId);
+
+  useEffect(() => {
+    setLoadingTrue();
+    setTimeout(() => {
+      setLoadingFalse();
+    }, 300); 
+    // eslint-disable-next-line
+  }, [noteId]);
+
+  if (loading) {
+    return <Spinner />;
+  }
 
   if (!selectedNote) {
     return (
@@ -59,7 +73,7 @@ const NoteItem = (props) => {
           <p className="date-tag mb-2 text-body-secondary">{tag}</p>
           <div className="btn-ed d-flex justify-content-start my-3 ">
             <button className="btn btn-editnote"   onClick={() => {
-                  props.updateNotes(selectedNote); // Pass the selectedNote directly
+                  props.updateNotes(selectedNote);
                 }}>   <FontAwesomeIcon
                 icon={faEdit}
                 className="edit mx-1"

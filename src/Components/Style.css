@@ -155,10 +155,11 @@
     background-color:rgba(190, 129, 131,0.4) ;
     border: 1px solid rgba(190, 129, 131,0.45);
     border-radius: 15px;
-    animation: fadeIn 2s ease ;
+    animation: fadeIn 3s ease ;
 
 }
 @keyframes fadeIn {
     0% {opacity: 1;}
+    80% {opacity: 0.8;}
     100% {opacity: 0;}
  } 

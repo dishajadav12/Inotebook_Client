@@ -7,6 +7,17 @@ const NoteState = (props) => {
   const notesInitial = [];
   const [notes, setNotes] = useState(notesInitial);
   const loadingBar = useRef(null);
+  const [loading, setLoading] = useState(true); 
+
+    // Function to set loading to true
+    const setLoadingTrue = () => {
+      setLoading(true);
+    };
+  
+    // Function to set loading to false
+    const setLoadingFalse = () => {
+      setLoading(false);
+    };
 
   //Get all notes
   const getNotes = async () => {
@@ -114,9 +125,11 @@ const NoteState = (props) => {
 
   return (
     <>
-    <LoadingBar color="rgb(190,129,131)" ref={loadingBar} />
+    <LoadingBar color="#FF52A2" ref={loadingBar} />
     <NoteContext.Provider
-      value={{ notes, addNote, editNote, deleteNote, getNotes}}
+      value={{ notes, addNote, editNote, deleteNote, getNotes, loading,
+        setLoadingTrue,
+        setLoadingFalse,}}
     >
       {props.children}
     </NoteContext.Provider>

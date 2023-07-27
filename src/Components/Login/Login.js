@@ -1,34 +1,47 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import {Canvas} from "@react-three/fiber"
 import { OrbitControls, Sphere, MeshDistortMaterial} from "@react-three/drei"
 import Notes from './Notes1.png';
+import LoadingBar from "react-top-loading-bar";
 import './authStyle.css';
 
 const Login = (props) => {
   const [credentials, setCredentials] = useState({ email: "", password: "" });
   let navigate = useNavigate();
+  const loadingBar = useRef(null);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://localhost:5000/api/auth/login", {
-      method: "POST",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: credentials.email,
-        password: credentials.password,
-      }),
-    });
-    const json = await response.json();
-    console.log(json);
-    if (json.success) {
-      localStorage.setItem("token", json.authtoken);
-      props.showAlert("Successfully Loged in!", "success");
-      navigate("/");
-    } else {
-      props.showAlert("Invalid credentials", "danger");
+    try {
+      loadingBar.current.continuousStart(); // Show loading bar at the start of the API call
+  
+      const response = await fetch("http://localhost:5000/api/auth/login", {
+        method: "POST",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: credentials.email,
+          password: credentials.password,
+        }),
+      });
+  
+      const json = await response.json();
+      console.log(json);
+  
+      if (json.success) {
+        localStorage.setItem("token", json.authtoken);
+        props.showAlert("Successfully Logged in!", "success");
+        navigate("/");
+      } else {
+        props.showAlert("Invalid credentials", "danger");
+      }
+    } catch (error) {
+      console.error("Error during login:", error);
+    } finally {
+      loadingBar.current.complete(); // Hide loading bar when API call is complete
     }
   };
   const onChange = (e) => {
@@ -36,6 +49,8 @@ const Login = (props) => {
   };
   return (
     <div className="container d-flex justify-content-between log-sign-container">
+         
+          <LoadingBar color="#FF52A2" ref={loadingBar} />
       <div className="login-container mt-2">
         <h2>Login to continue to i<span className='span-navbar-brand'>N</span>otebook
 </h2>

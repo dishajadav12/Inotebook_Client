@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter,Routes, Route} from "react-router-dom";
 import Navbar from './Components/Navbar';
 import Home from './Components/Home';
-import About from './Components/About';
+import About from './Components/About/About';
 import NoteState from './Context/notes/NoteState';
 import Alert from './Components/Alert';
 import Login from './Components/Login/Login';
@@ -27,7 +27,9 @@ function App() {
   return (
     <NoteState>
     <BrowserRouter>
-      <Navbar/>
+    <div className="navbar-container">
+    <Navbar/>
+    </div>
       <div className="route-container">
         <Routes>
             <Route exact path='/' element={<Home showAlert={showAlert}/>}/>

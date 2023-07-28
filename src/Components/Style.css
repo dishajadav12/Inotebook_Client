@@ -33,16 +33,18 @@
     background-color: transparent;
 }
 /* Navigation Bar */
-.navbar{
-    height: 60px;
-    background-color: whitesmoke;
-    border-bottom: 1px solid rgb(231, 231, 231);
-    box-shadow: 0px 1px 5px #00000033;
+    .navbar-container {
+        position: sticky;
+        top: 0;
+        height: 65px;
+        z-index: 100; /* Ensure the navbar stays above other content */
+        background-color: whitesmoke; /* Set the desired background color */
+        border-bottom: 1px solid rgb(231, 231, 231);
+        box-shadow: 0px 1px 5px #00000033;
+    }
 
-}
 .navbar-brand{
     padding-left: 2%;
-    padding-top: 0.5%;
     font-family: 'League Spartan', sans-serif;
     font-size: 28px;
 }

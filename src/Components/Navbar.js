@@ -12,7 +12,7 @@ const Navbar = () => {
     localStorage.removeItem('token');
   }
   return (
-    <div>
+    <div className='navbar-container'>
 
     <nav className="navbar navbar-expand-lg d-flex">
   <div className="container-fluid">
@@ -28,7 +28,7 @@ const Navbar = () => {
           <Link className="nav-link active" aria-current="page" to="/">Home</Link>
         </div>
         <div className="nav-item">
-          <Link className="nav-link" to="/about">About</Link>
+          <Link className="nav-link" to="/about">What is iNotebook? </Link>
         </div>
         </div>
       <div className="auth-btn-container">

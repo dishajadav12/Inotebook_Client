@@ -1,44 +1,101 @@
 .about-container{
+    position: relative;
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
     overflow-y: auto;
     height: 100%;
-    background-color: pink;
 
 }
 .about-container::-webkit-scrollbar{
     display: none;
 }
 
+/* Intro */
+
 .about-Intro-container{
-    padding:5% 20%;
     height: 100vh;
-    background-color: pink;
-    padding:5% 20%;
     scroll-snap-align: center;
 }
+.intro-curve{
+    content: "";
+    top: 60px;
+    right: 0;
+    height: 100vh;
+    display: block;
+    position: absolute;
+    width: 45%;
+    border-radius:55% 1% ;
+    opacity: 0.2;
+    background-color: rgb(217,119,128);
+    z-index: -1;
+}
+.intro-curve-2{
+    content: "";
+    margin-top: 10%;
+    right: 10;
+    height: 100vh;
+    display: block;
+    position: absolute;
+    width: 55%;
+    border-radius:55% 1% ;
+    opacity: 0.7;
+    background-color: rgb(244,196,187);
+    z-index: -1;
+}
+.intro-content-1{
+    padding-top: 5%;
+    width: 60%;
+}
+.intro-content-2{
+    display: inline-block;
+    padding-top: 15%;
+}
+.intro-image{
+    width: 80%;
+}
+/* about.css */
+@keyframes waveAnimation {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-20%);
+    }
+  }
+  
+  .intro-image-container {
+    position: absolute;
+    object-fit: contain;
+    margin: 4% 0 0 6%;
+    width: 30%;
+    height: 250px; /* Adjust this value to control the height of the wave */
+    animation: waveAnimation 2s linear forwards ; /* Adjust the animation duration as needed */
+  }
+  .intro-img-animation-container{
+    position: relative;
+    margin: -40% 0 0 -40%;
+    height: 800px;
+    z-index: -1;
+}
+/* Why */
 .about-Why-container{
     height: 100vh;
-    background-color: pink;
     padding:5% 20%;
     scroll-snap-align: center;
 
 }.about-Vision-container{
     height: 100vh;
-    background-color: pink;
     padding:5% 20%;
     scroll-snap-align: center;
 
 }.about-Contact-container{
     height: 100vh;
-    background-color: pink;
     padding:5% 20%;
     scroll-snap-align: center;
 
 }
 .about-Footer-container{
     height: 100vh;
-    background-color: pink;
     padding:5% 20%;
     scroll-snap-align: center;
 

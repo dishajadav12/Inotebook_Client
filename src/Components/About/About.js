@@ -9,7 +9,7 @@ import './about.css'
 const About = () => {
 
   return (
-    <div>
+    <div style={{backgroundColor: 'rgba(244,196,187,0.5)'}}>
       <Intro/>
       <Why/>
       <Vision/>

@@ -23,8 +23,8 @@ const Intro = () => {
           <MeshDistortMaterial
            color="rgba(190, 129, 131, 0.1)"
            attach="material"
-           distort={0.2}
-           speed={2}
+           distort={0.3}
+           speed={1}
           />
           </Sphere>
         </Canvas>

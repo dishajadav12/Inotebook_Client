@@ -3,18 +3,16 @@ import Intro from './Intro'
 import Why from './Why'
 import Vision from './Vision'
 import Contact from './Contact'
-import Footer from './Footer'
 import './about.css'
 
 const About = () => {
 
   return (
-    <div style={{backgroundColor: 'rgba(244,196,187,0.5)'}}>
+    <div>
       <Intro/>
-      <Why/>
       <Vision/>
+      <Why/>
       <Contact/>
-      <Footer/>
     </div>
   )
 }

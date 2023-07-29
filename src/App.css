@@ -3,7 +3,6 @@ body{
     scroll-behavior: smooth;
     overflow-y: auto;
     scroll-snap-align: center;
-    height: 100%;
 }
 body::-webkit-scrollbar{
     display: none;

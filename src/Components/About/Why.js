@@ -1,9 +1,37 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./about.css";
 
 const Why = () => {
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const options = {
+      threshold: 0.2 // Adjust the threshold as needed (from 0 to 1)
+    };
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("about-container-animation");
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, options);
+
+    const target = containerRef.current;
+    if (target) {
+      observer.observe(target);
+    }
+
+    return () => {
+      if (target) {
+        observer.unobserve(target);
+      }
+    };
+  }, []);
   return (
-    <div className="about-Why-container ">
+    <div ref={containerRef} className="about-Why-container ">
       <div className="why-content-1 text-center">
       <h2 className="my-3">Why Choose us?</h2>
 

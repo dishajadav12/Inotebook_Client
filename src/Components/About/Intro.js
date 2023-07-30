@@ -42,7 +42,6 @@ const Intro = () => {
         </div>
       </div>
       <div className="intro-curve"> </div>
-      <div className="intro-curve-2"> </div>
 
     </div>
   );

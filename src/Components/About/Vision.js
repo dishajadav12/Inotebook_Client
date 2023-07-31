@@ -40,7 +40,7 @@ const Vision = () => {
 
   <div className="vision-content-1">
       <div>
-        At iNotebook, our vision is to empower individuals and teams with <br /> an
+        <b>At iNotebook,</b>  our vision is to empower individuals and teams with <br /> an
         innovative and reliable digital notebook that enhances productivity <br /> and
         creativity. We believe that efficient note-taking should  be  <br /> accessible
         to everyone, and our platform strives to achieve this  <br /> by providing a

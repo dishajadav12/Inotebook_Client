@@ -3,6 +3,21 @@
 .about-Intro-container {
   height: 100vh;
   scroll-snap-align: center;
+  font-family: 'Inter', sans-serif;}
+.btn-get-started{
+  margin: 5% 2%;
+    padding: 2% 3%;
+  border-radius: 80px;
+  background-color:rgba(190, 129, 131,1);
+  color: white;
+  border: none;
+}
+.btn-get-started:hover{
+  margin: 5% 2%;
+  background-color:rgba(190, 129, 131,0.8);
+  color: white;
+  border: none;
+
 }
 .intro-curve {
   content: "";
@@ -54,26 +69,44 @@
 .intro-content-2 {
   display: inline-block;
   padding-top: 15%;
+  animation: textanimation 2s linear forwards;
+
+}
+@keyframes textanimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .intro-image {
   width: 80%;
 }
 /* about.css */
+.intro-heading{
+  animation: waveAnimation 2s linear forwards;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
 
+
+}
 .intro-image-container {
   position: absolute;
   object-fit: contain;
   margin: 4% 0 0 6%;
   width: 30%;
-  height: 250px; /* Adjust this value to control the height of the wave */
-  animation: waveAnimation 2s linear forwards; /* Adjust the animation duration as needed */
+  height: 250px;
+  animation: waveAnimation 2s linear forwards;
 }
 @keyframes waveAnimation {
   0% {
     transform: translateY(0);
+    opacity: 0;
   }
   100% {
     transform: translateY(-20%);
+    opacity: 1;
   }
 }
 
@@ -109,12 +142,18 @@
 }
 .why-content-2{
     padding-top: 2%;
+
 }
 .why-sub-content{
-    background-color:rgba(244, 196, 187,0.6) ;
     border-radius: 5% 30%;
-    padding: 4%;
+    padding: 2% 4% 4%;
     width: 30%;
+}
+.sub-content-title{
+  font-size: 20px;
+  font-weight: 600;
+  height: 70px;
+  padding-top: 2%;
 }
 /* vision */
 /* CSS for the Vision component */
@@ -132,6 +171,7 @@
   visibility: visible;
 }
 .vision-content-1 {
+  font-weight: 400;
   margin: 10% 5%;
   padding: 5% 0%;
 }
@@ -142,6 +182,7 @@
 }
 .our-vision-heading{
   margin-bottom: 5%;
+  font-weight: 700;
 }
 .vision-image-container {
   position: absolute;
@@ -163,6 +204,13 @@
   margin-top: 10%;
   height: 10vh;
   scroll-snap-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 3s ease-out; /* Add a transition for a smooth animation */
+}
+.contact-main.visible {
+  opacity: 1;
+  visibility: visible;
 }
 .about-Contact-container{
     text-align: center;
@@ -190,6 +238,8 @@
 .copyright-container{
 position: absolute;
 margin: 20% 0 0 46%;
+color: rgb(82, 82, 82);
+
 }
 .contact-link{
   color: gray;

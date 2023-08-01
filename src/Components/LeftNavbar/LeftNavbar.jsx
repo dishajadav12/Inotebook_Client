@@ -31,7 +31,7 @@ const LeftNavbar = () => {
   if (!notes || notes.length === 0) { // Check if notes is not null/undefined
     return (
       <div className="main-container">
-        <Link to="/home" className="add-note-option">
+        <Link to="/" className="add-note-option">
           <FontAwesomeIcon icon={faPlus} className="plus-symbol" />
           Add note
         </Link>
@@ -42,7 +42,7 @@ const LeftNavbar = () => {
 
   return (
     <div className="main-container">
-      <Link to="/home" className="add-note-option">
+      <Link to="/" className="add-note-option">
         <FontAwesomeIcon icon={faPlus} className="plus-symbol" />
         Add note
       </Link>

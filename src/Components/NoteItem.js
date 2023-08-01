@@ -82,7 +82,7 @@ const NoteItem = (props) => {
            <button className="btn btn-dark mx-1"  onClick={() => {
                   deleteNote(_id);
                   props.showAlert("Note deleted successfully", "success");
-                  navigate('/home');
+                  navigate('/');
                 }}>
            <FontAwesomeIcon
                 icon={faTrashAlt}

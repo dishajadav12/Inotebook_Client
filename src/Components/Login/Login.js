@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import {Canvas} from "@react-three/fiber"
 import { OrbitControls, Sphere, MeshDistortMaterial} from "@react-three/drei"
 import Notes from './Notes1.png';
@@ -34,7 +34,7 @@ const Login = (props) => {
       if (json.success) {
         localStorage.setItem("token", json.authtoken);
         props.showAlert("Successfully Logged in!", "success");
-        navigate("/home");
+        navigate("/");
       } else {
         props.showAlert("Invalid credentials", "danger");
       }
@@ -85,6 +85,7 @@ const Login = (props) => {
               name="password"
             />
           </div>
+          <div>Don't have an account? <Link to="/signup" style={{textDecoration:'none'}}> Signup</Link> </div>
           <button type="submit" className="btn login-btn my-3">
             Login
           </button>

@@ -10,8 +10,8 @@ import "./about.css";
 const Intro = () => {
   return (
     <div className=" about-Intro-container ">
-      <div className="intro-content d-flex justify-content-around">
-        <div className="intro-content-1 ">
+      <div className="intro-content">
+        <div className="intro-content-1">
         <h2 className="intro-heading">Welcome to our Digital Notebook!</h2>
         <div className="intro-image-container">   
              <img src={IMAGE} alt="your digital notebook" className="intro-image" />
@@ -42,7 +42,7 @@ const Intro = () => {
             intuitive, efficient, <br /> and secure, providing you with the ultimate
             note-taking experience.
           </div>
-          <Link to='/home' className="btn btn-get-started btn-animate button-start my-3">Get started <FontAwesomeIcon icon={faCaretRight} fade className="caret-right" /></Link>
+          <Link to='/login' className="btn btn-get-started btn-animate button-start my-3">Get started <FontAwesomeIcon icon={faCaretRight} fade className="caret-right" /></Link>
         </div>
       </div>
       <div className="intro-curve"> </div>

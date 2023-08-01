@@ -25,10 +25,10 @@ const Navbar = () => {
     <div className="collapse container navbar-collapse" id="navbarSupportedContent">
         <div className='navbar-nav me-auto mb-2 mb-lg-0'>
         <div className="nav-item">
-          <Link className="nav-link active" aria-current="page" to="/home">Home</Link>
+          <Link className="nav-link active" aria-current="page" to="/">Home</Link>
         </div>
         <div className="nav-item">
-          <Link className="nav-link" to="/">What is iNotebook? </Link>
+          <Link className="nav-link" to="/about">What is iNotebook? </Link>
         </div>
         </div>
       <div className="auth-btn-container">

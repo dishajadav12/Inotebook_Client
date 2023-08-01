@@ -35,7 +35,7 @@ const Vision = () => {
   }, []);
 
  return (
-  <div ref={containerRef} className="about-Vision-container d-flex justify-content-around">
+  <div ref={containerRef} className="about-Vision-container">
           <div className="intro-curve-2"> </div>
 
   <div className="vision-content-1">

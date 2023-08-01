@@ -4,6 +4,11 @@
   height: 100vh;
   scroll-snap-align: center;
   font-family: 'Inter', sans-serif;}
+  .intro-content{
+    display: flex;
+    justify-content: space-around;
+  }
+
 .btn-get-started{
   margin: 5% 2%;
     padding: 2% 3%;
@@ -134,13 +139,15 @@
   scroll-snap-align: center;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 3s ease-out; /* Add a transition for a smooth animation */
+  transition: opacity 2s ease-out; /* Add a transition for a smooth animation */
 }
 .about-Why-container.visible{
   opacity: 1;
   visibility: visible;
 }
 .why-content-2{
+  display: flex;
+  justify-content: space-around;
     padding-top: 2%;
 
 }
@@ -160,6 +167,8 @@
 .about-Vision-container {
   height: 100vh;
   scroll-snap-align: center;
+  display: flex;
+  justify-content: space-around;
   opacity: 0;
   visibility: hidden;
   transition: opacity 3s ease-out; /* Add a transition for a smooth animation */
@@ -206,7 +215,7 @@
   scroll-snap-align: center;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 3s ease-out; /* Add a transition for a smooth animation */
+  transition: opacity 2s ease-out; /* Add a transition for a smooth animation */
 }
 .contact-main.visible {
   opacity: 1;
@@ -244,4 +253,221 @@ color: rgb(82, 82, 82);
 .contact-link{
   color: gray;
   text-decoration: none;
+}
+/* dsefse
+faef
+szefc
+cefds
+efdsf
+zdsf */
+
+@media (max-width: 1000px) {
+  /* Intro */
+.about-Intro-container {
+  height: 100vh;
+  scroll-snap-align: center;
+  font-family: 'Inter', sans-serif;}
+.btn-get-started{
+  margin: 5% 2%;
+    padding: 2% 5%;
+  border-radius: 10px;
+  background-color:rgba(190, 129, 131,1);
+  color: white;
+  border: none;
+}
+.btn-get-started:hover{
+  margin: 5% 2%;
+  background-color:rgba(190, 129, 131,0.8);
+  color: white;
+  border: none;
+
+}
+.intro-curve {
+  content: "";
+  top: 200px;
+  right: 0;
+  height: 70vh;
+  display: block;
+  position: absolute;
+  width: 85%;
+  border-radius: 25% 1%;
+  opacity: 0.2;
+  background-color: rgb(217, 119, 128);
+  z-index: -1;
+  animation: introcurveAnimation 4s ease-out; /* Adjust the animation duration as needed */
+}
+@keyframes introcurveAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+.intro-curve-2 {
+  content: "";
+  height: 50vh;
+  margin-left: 10px;
+  display: block;
+  position: absolute;
+  width: 95%;
+  border-radius: 60px 5px;
+  opacity: 0.7;
+  background-color: rgb(244, 196, 187);
+  z-index: -1;
+  animation: visioncurveAnimation 4s ease-out; /* Adjust the animation duration as needed */
+}
+@keyframes visioncurveAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+.intro-content-1 {
+  padding-top: 5%;
+  width: 60%;
+}
+.intro-content-2 {
+  display: inline-block;
+  padding-top: 15%;
+  animation: textanimation 2s linear forwards;
+
+}
+@keyframes textanimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.intro-image {
+  width: 80%;
+}
+/* why */
+.about-Why-container {
+  padding: 1% 10% ;
+  scroll-snap-align: center;
+  height: 55vh;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 2s ease-out; /* Add a transition for a smooth animation */
+}
+.about-Why-container.visible{
+  opacity: 1;
+  visibility: visible;
+}
+.why-content-2{
+   display: block;
+    padding-top: 0%;
+   margin: 0% !important;
+}
+.why-sub-content{
+    border-radius: 20px 10px;
+    padding: 2% 4% 4%;
+    margin: 2% 0;
+    width: 100%;
+}
+/* vision */
+/* CSS for the Vision component */
+.about-Vision-container {
+  height: 95vh;
+  scroll-snap-align: center;
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 3s ease-out; /* Add a transition for a smooth animation */
+}
+
+/* Add a class to make the content inside the container visible when the container is in view */
+.about-Vision-container.visible {
+  opacity: 1;
+  visibility: visible;
+}
+.vision-content-1 {
+  font-weight: 400;
+  margin: 10% 5%;
+  padding: 10% 2% 0 2%;
+}
+.vision-content-2 {
+  margin-top: 5%;
+  width: 40%;
+  text-align: center;
+}
+.our-vision-heading{
+  position: absolute;
+  margin: -130% 0 0 33%;
+  font-weight: 700;
+}
+.vision-image-container {
+  position: absolute;
+  object-fit: contain;
+  height:100px;
+  margin-top: 4%;
+}
+.vision-image {
+  width: 90%;
+}
+.vision-img-animation-container {
+  margin: 30px 0 0 10px;
+  width: 100%;
+  position: absolute;
+  height: 300px;
+  opacity: 0.5;
+}
+.sub-content-title{
+  font-size: 20px;
+  font-weight: 600;
+  height: 50px;
+  text-align: center;
+  padding-top: 4%;
+}
+.sub-content-info{
+  display: none;
+}
+.contact-main {
+  scroll-snap-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 2s ease-out; /* Add a transition for a smooth animation */
+}
+.contact-main.visible {
+  opacity: 1;
+  visibility: visible;
+}
+.about-Contact-container{
+    text-align: center;
+}
+.community-image-container{
+  display: none;
+  z-index: -2;
+}
+.contact-curve-1{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+.contact-curve-2{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    z-index: -3;
+}
+.copyright-container{
+color: rgb(82, 82, 82);
+margin: 17% 0 0 35%;
+font-size: 12px;
+
+
+
+}
+.contact-link{
+  color: gray;
+  text-decoration: none;
+}
 }

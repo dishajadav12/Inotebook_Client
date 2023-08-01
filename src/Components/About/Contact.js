@@ -48,7 +48,7 @@ const Contact = () => {
         </a>
       </div>
       <div className="copyright-container">
-        <FontAwesomeIcon icon={faCopyright} /> inotebook.co
+        <FontAwesomeIcon icon={faCopyright} /> 2023 inotebook.co
       </div>
 
       <div className="community-image-container">

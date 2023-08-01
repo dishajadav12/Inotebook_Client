@@ -32,8 +32,8 @@ function App() {
     </div>
       <div className="route-container">
         <Routes>
-            <Route exact path='/' element={<About/>}/>
-            <Route exact path='/home' element={<Home showAlert={showAlert}/>}/>
+            <Route exact path='/about' element={<About/>}/>
+            <Route exact path='/' element={<Home showAlert={showAlert}/>}/>
             <Route exact path='/login' element={<Login showAlert={showAlert}/>}/>
             <Route exact path='/signup' element={<Signup showAlert={showAlert}/>}/>
             <Route exact path='/notedetail/:noteId' element={<NoteDetail showAlert={showAlert}/>}/>

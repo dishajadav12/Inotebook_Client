@@ -12,7 +12,7 @@ const Intro = () => {
     <div className=" about-Intro-container ">
       <div className="intro-content">
         <div className="intro-content-1">
-        <h2 className="intro-heading">Welcome to our Digital Notebook!</h2>
+        <h2 className="intro-heading mx-3">Welcome to our Digital Notebook!</h2> 
         <div className="intro-image-container">   
              <img src={IMAGE} alt="your digital notebook" className="intro-image" />
 </div>
@@ -36,11 +36,12 @@ const Intro = () => {
 
         <div className="intro-content-2">
           <div className="container ">
-            <b>At iNotebook,</b> <br /> we have created a cutting-edge digital notebook <br /> that
-            allows you to take notes,  organize your thoughts,<br /> and stay
-            productive like never before. <br /> Our platform is designed to be
-            intuitive, efficient, <br /> and secure, providing you with the ultimate
-            note-taking experience.
+            <b>At iNotebook,</b> <br />
+            <div className="my-1 "> we have created a cutting-edge digital notebook  that
+            allows you to take notes,  organize your thoughts,and stay
+            productive like never before.  Our platform is designed to be
+            intuitive, efficient,and secure, providing you with the ultimate
+            note-taking experience.</div>
           </div>
           <Link to='/login' className="btn btn-get-started btn-animate button-start my-3">Get started <FontAwesomeIcon icon={faCaretRight} fade className="caret-right" /></Link>
         </div>

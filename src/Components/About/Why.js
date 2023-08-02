@@ -69,7 +69,7 @@ const Why = () => {
         experience across all devices.</div> </div>
 
       <div className="why-sub-content" style={{backgroundColor:"rgba(250, 217, 209)"}}>
-        <div className="sub-content-title">Safe and Secure Authentication</div> 
+        <div className="sub-content-title">Secure Authentication</div> 
        <div className="sub-content-info"> We take your data security seriously.
         Our safe authentication page ensures that your personal and sensitive
         information remains protected at all times. You can trust us with your

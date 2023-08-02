@@ -39,22 +39,24 @@ const Vision = () => {
           <div className="intro-curve-2"> </div>
 
   <div className="vision-content-1">
-      <div>
-        <b>At iNotebook,</b>  our vision is to empower individuals and teams with <br /> an
-        innovative and reliable digital notebook that enhances productivity <br /> and
-        creativity. We believe that efficient note-taking should  be  <br /> accessible
-        to everyone, and our platform strives to achieve this  <br /> by providing a
+  <h2 className="our-vision-heading-1">Our Vision</h2>
+
+      <div >
+        <b>At iNotebook,</b>  our vision is to empower individuals and teams with  an
+        innovative and reliable digital notebook that enhances productivity  and
+        creativity. We believe that efficient note-taking should  be   accessible
+        to everyone, and our platform strives to achieve this   by providing a
         feature-rich and user-friendly experience.
       </div>
       <div>
-        Join us on this journey of organization, productivity, and creativity. <br />
+        Join us on this journey of organization, productivity, and creativity. 
        <div className="my-3">Experience the power of digital note-taking and unlock your full
-        potential <br /> with iNotebook.</div>
+        potential  with iNotebook.</div>
       </div>
       </div>
 
       <div className="vision-content-2">
-        <h2 className="our-vision-heading">Our Vision</h2>
+        <h2 className="our-vision-heading-2">Our Vision</h2>
         <div className="vision-image-container">
           <img src={IMAGE2} alt="your digital notebook" className="vision-image" />
         </div>

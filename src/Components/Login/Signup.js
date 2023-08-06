@@ -54,7 +54,7 @@ const Signup = (props) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
   return (
-    <div className="container d-flex justify-content-between log-sign-container">
+    <div className="container log-sign-container">
         <LoadingBar color="#FF52A2" ref={loadingBar} />
       <div className="design-container">
     <h2 className="text-center">Collect Your Thoughts.</h2>
@@ -81,6 +81,7 @@ const Signup = (props) => {
       </div>
       <div className="signup-container">
       <h2>  Sign up now to embark on your <br /> note-taking journey!</h2>
+      <h4>  Sign up now to embark on your note-taking journey!</h4>
 
       <form onSubmit={handleSubmit} className="auth-form">
         <div className="my-3">

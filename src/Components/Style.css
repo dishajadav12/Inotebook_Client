@@ -55,6 +55,11 @@
     font-weight: 700;
     color: rgb(190,129,131);
 }
+.auth-btn-container{
+    padding-right: 5%;
+}
+.auth-btn-container-mob{
+display: none;}
 /* form position */
 .auth-form{
     width: 70%;
@@ -94,9 +99,8 @@
     width: 50%;
 }
 .btn-editnote{
-    background-color:rgba(190, 129, 131,0.8);
-    color: white;
-    border: none;
+    color: rgba(190, 129, 131,1);
+    border: 1px solid rgba(190, 129, 131,0.8) ;
 }
 .btn-addnote{
     background-color:rgba(190, 129, 131,1);
@@ -114,17 +118,10 @@
     border: none;
 }
 .btn-editnote:hover{
-    background-color:rgba(190, 129, 131,0.6);
-    color: white;
-    border: none;
+    color: rgba(190, 129, 131,0.7) ;
+    border: 1px solid rgba(190, 129, 131,0.6) ;
 }
-.delete-btn{
-    background-color:rgba(190, 129, 131,0.5);
-}
-.btn-light{
-    background-color: rgb(218, 218, 218);
 
-}
 .edit-delete-btn{
     padding-top: 30%;
 }
@@ -195,3 +192,32 @@
     40% {opacity: 0.6;}
     100% {opacity: 0;}
  } 
+
+
+ /* gvyfuhj
+ hetdgfx
+ thegrfdsc
+ trgfd */
+ @media (max-width: 1000px){
+
+    .navbar-container{
+        width: 100%;
+
+height: 60px;    }
+.navbar-expand-lg{
+    background-color: whitesmoke;
+}
+.navbar-collapse{
+    padding: 5% 0;
+}
+.auth-btn-container{
+    display: none;
+}
+.auth-btn-container-mob{
+    display: block;
+    margin-right: 5%;
+}
+.mob-option-toggler{
+    display: none;
+}
+ }

@@ -48,14 +48,17 @@ const Login = (props) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
   return (
-    <div className="container d-flex justify-content-between log-sign-container">
+    <div className="container log-sign-container">
          
           <LoadingBar color="rgba(190, 129, 131,1)" ref={loadingBar} />
       <div className="login-container mt-2">
-        <h2>Login to continue to i<span className='span-navbar-brand'>N</span>otebook
+      <div className="text-center-mob" style={{color: "#555"}}>Collect Your Thoughts.</div>
+
+        <h2 className="my-2">Login to continue to i<span className='span-navbar-brand'>N</span>otebook
 </h2>
-        <form onSubmit={handleSubmit} className="auth-form mt-3">
-          <div className="mb-3">
+
+        <form onSubmit={handleSubmit} className="auth-form">
+          <div>
             <label htmlFor="email" className="form-label">
               Email address
             </label>
@@ -99,7 +102,7 @@ const Login = (props) => {
     <h2 className="text-center">Collect Your Thoughts.</h2>
     <img className="signup-img img-fluid" src={Notes} alt="Your any time note taker" />
 
-      <div className="img-animation-container">
+      <div className="img-animation-container-login">
         {/* 3d Modal */}
         <Canvas camera={{fov:25, position:[1,1,5]}}>
           <OrbitControls enableZoom={false} autoRotate />
@@ -115,7 +118,7 @@ const Login = (props) => {
           </Sphere>
         </Canvas>
       </div>
-      <h6 className="text-center" style={{color: "#555"}}>Unlock the art of hassle-free note-taking, all for free!</h6>
+      <div className="text-center-2" style={{color: "#555"}}>Unlock the art of hassle-free note-taking, all for free!</div>
 
       </div>
     </div>

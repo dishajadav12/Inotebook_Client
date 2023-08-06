@@ -1,4 +1,6 @@
 .log-sign-container{
+    display: flex;
+    justify-content: space-around;
     position: absolute;
     margin: 3% 0 0 6%;
 }
@@ -61,4 +63,70 @@
 .bottom-text{
     padding-top: 7%;
 
+}
+.text-center-2{
+text-align: center;
+}
+.text-center-mob{
+    display: none;
+}
+
+
+@media (max-width: 1000px){
+.log-sign-container{
+    margin: 6% 0% 0% 0%;
+    padding-left: 6%;
+    display: block;
+}
+ .auth-form{
+    margin-top: 10%;
+}
+.text-center{
+    display: none;
+}
+.bottom-text{
+    display: none;
+}
+.design-container{
+    width: 100%;
+    margin-top: -10%;
+}
+
+
+.img-animation-container-login{
+display: none;
+}
+.img-animation-container{
+    display: none;
+    }
+    
+.signup-img{
+    width: 50%;
+    position: relative;
+    object-fit: contain;
+    margin:0% 15%;
+    animation: animate 2s infinite ease alternate;
+    z-index: 1;
+}
+@keyframes animate {
+    100%{
+        transform: translateY(5px);
+    }
+}
+.text-center-2{
+    font-size: 14px;
+    text-align: start;
+} 
+.text-center-mob{
+    display: block;
+    font-weight: 600;
+}
+.form-text{
+    font-size: 11px;
+}
+.signup-container{
+    width: 100%;
+}
+.signup-container h2{
+display: none;}
 }

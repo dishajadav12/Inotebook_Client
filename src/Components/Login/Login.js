@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import {Canvas} from "@react-three/fiber"
+import { CSSTransition } from 'react-transition-group';
 import { OrbitControls, Sphere, MeshDistortMaterial} from "@react-three/drei"
 import Notes from './Notes1.png';
 import LoadingBar from "react-top-loading-bar";
@@ -48,6 +49,8 @@ const Login = (props) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
   return (
+    <CSSTransition in={true} appear={true} timeout={2000} classNames="slide">
+
     <div className="container log-sign-container">
          
           <LoadingBar color="rgba(190, 129, 131,1)" ref={loadingBar} />
@@ -58,7 +61,7 @@ const Login = (props) => {
 </h2>
 
         <form onSubmit={handleSubmit} className="auth-form">
-          <div>
+          <div className="login-label">
             <label htmlFor="email" className="form-label">
               Email address
             </label>
@@ -122,6 +125,8 @@ const Login = (props) => {
 
       </div>
     </div>
+    </CSSTransition>
+
   );
 };
 

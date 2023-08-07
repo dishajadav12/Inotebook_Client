@@ -7,6 +7,9 @@
 .signup-container{
     width: 40%;
 }
+.login-label{
+    margin: 5% 0%;
+}
 .design-container{
     width: 40%;
 }
@@ -73,6 +76,27 @@ text-align: center;
 .text-center-mob{
     display: none;
 }
+/* authStyle.css */
+.slide-appear,
+.slide-enter {
+  transform: translateY(100%);
+}
+
+.slide-appear-active,
+.slide-enter-active {
+  transform: translateY(0);
+  transition: transform 2s ease;
+}
+
+.slide-exit {
+  transform: translateY(0);
+}
+
+.slide-exit-active {
+  transform: translateY(-100%);
+  transition: transform 2s ease;
+}
+
 
 
 @media (max-width: 1000px){
@@ -132,4 +156,7 @@ display: none;
 }
 .signup-container h2{
 display: none;}
+.login-label{
+    margin: 1% 0%;
+}
 }

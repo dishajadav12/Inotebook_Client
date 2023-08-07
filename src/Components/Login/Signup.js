@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import {Canvas} from "@react-three/fiber"
 import { OrbitControls, Sphere, MeshDistortMaterial} from "@react-three/drei"
 import Notes from './Notes1.png';
+import { CSSTransition } from 'react-transition-group';
 import LoadingBar from "react-top-loading-bar";
 import './authStyle.css';
 
@@ -54,6 +55,8 @@ const Signup = (props) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
   return (
+    <CSSTransition in={true} appear={true} timeout={2000} classNames="slide">
+
     <div className="container log-sign-container">
         <LoadingBar color="#FF52A2" ref={loadingBar} />
       <div className="design-container">
@@ -151,7 +154,7 @@ const Signup = (props) => {
     </div>
   
     </div>
-
+</CSSTransition>
   );
 };
 

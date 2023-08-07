@@ -79,7 +79,7 @@ const NoteItem = (props) => {
                 className="edit mx-1"
               
               />Edit</button>
-           <button className="btn btn-dark mx-1"  onClick={() => {
+           <button className="btn delete-btn mx-1"  onClick={() => {
                   deleteNote(_id);
                   props.showAlert("Note deleted successfully", "success");
                   navigate('/');

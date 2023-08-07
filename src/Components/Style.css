@@ -131,6 +131,14 @@ display: none;}
 .logout-btn{
     height: 40px !important;
 }
+.delete-btn{
+    border: 1px solid black;
+}
+.delete-btn:hover{
+    color: white;
+    background-color: black;
+    border: 1px solid black;
+}
 /* LeftNavbar */
 .left-navbar {
     width: 15% !important;

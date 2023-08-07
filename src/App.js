@@ -9,6 +9,7 @@ import Alert from './Components/Alert';
 import Login from './Components/Login/Login';
 import Signup from './Components/Login/Signup';
 import NoteDetail from "./Components/NoteDetail";
+import LeftNavbar from "./Components/LeftNavbar/LeftNavbar";
 
 
 
@@ -37,6 +38,7 @@ function App() {
             <Route exact path='/login' element={<Login showAlert={showAlert}/>}/>
             <Route exact path='/signup' element={<Signup showAlert={showAlert}/>}/>
             <Route exact path='/notedetail/:noteId' element={<NoteDetail showAlert={showAlert}/>}/>
+            <Route exact path='/leftnavbar' element={<LeftNavbar/>}/>
         </Routes>
         </div>  
         <Alert alert={alert}/>

@@ -81,7 +81,7 @@ const Signup = (props) => {
       </div>
       <div className="signup-container">
       <h2>  Sign up now to embark on your <br /> note-taking journey!</h2>
-      <h4>  Sign up now to embark on your note-taking journey!</h4>
+      <h6>  Sign up now to embark on your note-taking journey!</h6>
 
       <form onSubmit={handleSubmit} className="auth-form">
         <div className="my-3">

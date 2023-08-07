@@ -6,7 +6,7 @@ import './Style.css'
 const Home = (props) => {
   const {showAlert} = props;
   return (
-    <div className="d-flex justify-content-start leftside-home-container">
+    <div className=" leftside-home-container">
             <div className="left-navbar">
         <LeftNavbar/>
       </div>

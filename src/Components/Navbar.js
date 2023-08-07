@@ -23,7 +23,7 @@ const Navbar = () => {
     <div className="auth-btn-container-mob">
       {!localStorage.getItem('token') ? <form action=""> <Link className="btn login-btn "  role='button' to='/login'>Login</Link>
         </form>: 
-        <Link className="btn btn-dark mx-1" role='button' onClick={handleLogout}>Log Out</Link>}
+        <Link className="btn btn-dark logout-btn mx-1" role='button' onClick={handleLogout}>Logout</Link>}
       </div>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>

@@ -1,5 +1,8 @@
 import React, { useContext, useState } from "react";
 import NoteContext from "../Context/notes/noteContext";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClipboard } from "@fortawesome/free-regular-svg-icons";
 import './Style.css'
 
 
@@ -21,6 +24,8 @@ const AddNote = (props) => {
   };
   return (
     <div>
+      <Link to='/leftnavbar' className="my-notes-btn">
+      <FontAwesomeIcon icon={faClipboard} className="clipboard-icon" />My Notes</Link>
       <form className="my-3">
         <div className="form-group my-3">
           <input

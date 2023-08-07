@@ -322,7 +322,7 @@ display: none;
   width: 150%;
 }
 .intro-heading{
-  padding-top: 10px;
+  padding-top: 40px;
   animation: waveAnimation 2s linear forwards;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
@@ -484,12 +484,12 @@ display: none;
 color: rgb(82, 82, 82);
 margin: 17% 0 0 35%;
 font-size: 12px;
-
-
-
 }
 .contact-link{
   color: gray;
   text-decoration: none;
+}
+.signup-btn{
+  margin-bottom: 5%;
 }
 }

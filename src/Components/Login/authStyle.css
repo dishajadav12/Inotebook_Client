@@ -60,6 +60,9 @@
         transform: translateY(10px);
     }
 }
+.img-animation-container-login{
+    height: 500px;
+}
 .bottom-text{
     padding-top: 7%;
 
@@ -79,7 +82,7 @@ text-align: center;
     display: block;
 }
  .auth-form{
-    margin-top: 10%;
+    margin-top: 5%;
 }
 .text-center{
     display: none;

@@ -98,6 +98,9 @@ display: none;}
 .tag-input{
     width: 50%;
 }
+.my-notes-btn{
+    display: none;
+}
 .btn-editnote{
     color: rgba(190, 129, 131,1);
     border: 1px solid rgba(190, 129, 131,0.8) ;
@@ -124,6 +127,9 @@ display: none;}
 
 .edit-delete-btn{
     padding-top: 30%;
+}
+.logout-btn{
+    height: 40px !important;
 }
 /* LeftNavbar */
 .left-navbar {
@@ -154,6 +160,8 @@ display: none;}
     width: 80%;
 }
 .leftside-home-container{
+    display: flex;
+    justify-content: start;
     height: 500px;
 }
 .addnote-container{
@@ -200,11 +208,12 @@ display: none;}
  trgfd */
  @media (max-width: 1000px){
 
-    .navbar-container{
+.navbar-container{
         width: 100%;
+        height: 50px;
 
-height: 60px;    }
-.navbar-expand-lg{
+
+}.navbar-expand-lg{
     background-color: whitesmoke;
 }
 .navbar-collapse{
@@ -219,5 +228,72 @@ height: 60px;    }
 }
 .mob-option-toggler{
     display: none;
+}
+.my-notes-btn{
+    display: block;
+    text-decoration: none;
+    margin-top: 10%;
+    color: black;
+    border: 2px solid rgba(190, 129, 131,0.45);
+    border-radius: 5px;
+    padding: 3% 35%;
+    font-weight: 600;
+}
+.left-navbar{
+    display: none;
+}
+.home-container{
+    width: 100%;
+}
+.addnote-container{
+    padding: 1%;
+}
+.add-note-option{
+    border: 2px solid rgba(190, 129, 131,0.45);
+    border-radius: 5px;
+    padding: 3% 10%;
+    width: 100%;
+}
+.note-detail-container{
+    margin-top: 10%;
+}
+.add-note-form-description{
+    background-color: transparent;
+    width: 100%;
+    font-size: 14px;
+}
+.hr-title{
+    margin: 0px;
+    color: rgb(174, 174, 174);
+    width: 50%;
+}
+/* Alertbox */
+.alert-box{
+    width: 80%;
+    margin:-40% 0 0 10%;
+    height: 60px;
+    z-index: 10;
+}
+
+.alert-container{
+    background-color:rgba(190, 129, 131,0.4) ;
+    border: 1px solid rgba(190, 129, 131,0.45);
+    border-radius: 5px;
+    animation: fadeIn 2s ease ;
+
+}
+@keyframes fadeIn {
+    0% {opacity: 1;}
+    20% {opacity: 1 ;}
+    40% {opacity: 0.8;}
+    100% {opacity: 0;}
+ } 
+.clipboard-icon{
+    color: rgb(190,129,131);
+    padding: 0% 3%;
+}
+.add-note-form{
+    margin-top: 2%;
+    font-size: 18px;
 }
  }

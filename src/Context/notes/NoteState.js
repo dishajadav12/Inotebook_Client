@@ -1,9 +1,10 @@
 import React, { useState, useRef } from "react";
 import LoadingBar from "react-top-loading-bar";
 import NoteContext from "./noteContext";
+import { BASE_URL } from "../../helper";
 
 const NoteState = (props) => {
-  const host = "http://localhost:5000";
+  const host = BASE_URL;
   const notesInitial = [];
   const [notes, setNotes] = useState(notesInitial);
   const loadingBar = useRef(null);

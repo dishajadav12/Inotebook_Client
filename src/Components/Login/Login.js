@@ -6,8 +6,12 @@ import { OrbitControls, Sphere, MeshDistortMaterial} from "@react-three/drei"
 import Notes from './Notes1.png';
 import LoadingBar from "react-top-loading-bar";
 import './authStyle.css';
+import { BASE_URL } from "../../helper";
+
 
 const Login = (props) => {
+  const host = BASE_URL;
+
   const [credentials, setCredentials] = useState({ email: "", password: "" });
   let navigate = useNavigate();
   const loadingBar = useRef(null);
@@ -17,7 +21,7 @@ const Login = (props) => {
     try {
       loadingBar.current.continuousStart(); // Show loading bar at the start of the API call
   
-      const response = await fetch("http://localhost:5000/api/auth/login", {
+      const response = await fetch(`${host}/api/auth/login`, {
         method: "POST",
         mode: "cors",
         headers: {

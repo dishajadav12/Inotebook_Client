@@ -102,7 +102,7 @@ display: none;}
     display: none;
 }
 .btn-editnote{
-    color: rgba(190, 129, 131,1);
+    color: #be8183;
     border: 1px solid rgba(190, 129, 131,0.8) ;
 }
 .btn-addnote{
@@ -152,12 +152,12 @@ display: none;}
 }
 
 .left-navbar::-webkit-scrollbar-thumb {
-    background-color: #888;
+    background-color: #dadada;
     border-radius: 8px; 
 }
 
 .left-navbar::-webkit-scrollbar-thumb:hover {
-    background-color: #555; 
+    background-color: #dadada; 
 }
 
 .left-navbar::-webkit-scrollbar-track {

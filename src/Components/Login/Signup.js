@@ -6,8 +6,12 @@ import Notes from './Notes1.png';
 import { CSSTransition } from 'react-transition-group';
 import LoadingBar from "react-top-loading-bar";
 import './authStyle.css';
+import { BASE_URL } from "../../helper";
+
 
 const Signup = (props) => {
+  const host = BASE_URL;
+
   const [credentials, setCredentials] = useState({
     name: "",
     email: "",
@@ -21,7 +25,7 @@ const Signup = (props) => {
     try {
       loadingBar.current.continuousStart(); // Show loading bar at the start of the API call
   
-      const response = await fetch("http://localhost:5000/api/auth/createuser", {
+      const response = await fetch(`${host}/api/auth/createuser`, {
         method: "POST",
         mode: "cors",
         headers: {

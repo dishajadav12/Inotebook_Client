@@ -30,6 +30,7 @@ function App() {
     <BrowserRouter>
     <div className="navbar-container">
     <Navbar/>
+    <Alert alert={alert}/>
     </div>
       <div className="route-container">
         <Routes>
@@ -41,7 +42,6 @@ function App() {
             <Route exact path='/leftnavbar' element={<LeftNavbar/>}/>
         </Routes>
         </div>  
-        <Alert alert={alert}/>
     </BrowserRouter>
 
     </NoteState>

@@ -1,24 +1,23 @@
 import React, { useState, useRef } from "react";
 import LoadingBar from "react-top-loading-bar";
 import NoteContext from "./noteContext";
-import { BASE_URL } from "../../helper";
 
 const NoteState = (props) => {
-  const host = BASE_URL;
+  const host = process.env.REACT_APP_BASE_URL;
   const notesInitial = [];
   const [notes, setNotes] = useState(notesInitial);
   const loadingBar = useRef(null);
-  const [loading, setLoading] = useState(true); 
+  const [loading, setLoading] = useState(true);
 
-    // Function to set loading to true
-    const setLoadingTrue = () => {
-      setLoading(true);
-    };
-  
-    // Function to set loading to false
-    const setLoadingFalse = () => {
-      setLoading(false);
-    };
+  // Function to set loading to true
+  const setLoadingTrue = () => {
+    setLoading(true);
+  };
+
+  // Function to set loading to false
+  const setLoadingFalse = () => {
+    setLoading(false);
+  };
 
   //Get all notes
   const getNotes = async () => {
@@ -40,8 +39,8 @@ const NoteState = (props) => {
       loadingBar.current.complete(); // Hide loading bar when API call is complete
     }
   };
-   // Add a note
-   const addNote = async (title, description, tag) => {
+  // Add a note
+  const addNote = async (title, description, tag) => {
     loadingBar.current.continuousStart();
     try {
       const response = await fetch(`${host}/api/notes/addnote`, {
@@ -49,7 +48,7 @@ const NoteState = (props) => {
         mode: "cors",
         headers: {
           "Content-Type": "application/json",
-          "auth-token": localStorage.getItem('token'),
+          "auth-token": localStorage.getItem("token"),
         },
         body: JSON.stringify({ title, description, tag }),
       });
@@ -71,15 +70,15 @@ const NoteState = (props) => {
         mode: "cors",
         headers: {
           "Content-Type": "application/json",
-          "auth-token": localStorage.getItem('token'),
+          "auth-token": localStorage.getItem("token"),
         },
         body: JSON.stringify({ title, description, tag }),
       });
 
       const json = await response.json();
       console.log(json);
-      
-      let newNotes = JSON.parse(JSON.stringify(notes))
+
+      let newNotes = JSON.parse(JSON.stringify(notes));
       //Logic to edit a note
       for (let index = 0; index < newNotes.length; index++) {
         const element = newNotes[index];
@@ -107,7 +106,7 @@ const NoteState = (props) => {
         mode: "cors",
         headers: {
           "Content-Type": "application/json",
-          "auth-token": localStorage.getItem('token'),
+          "auth-token": localStorage.getItem("token"),
         },
       });
       const json = await response.json();
@@ -126,18 +125,23 @@ const NoteState = (props) => {
 
   return (
     <>
-    <LoadingBar color="rgba(190, 129, 131,1)" ref={loadingBar} />
-    <NoteContext.Provider
-      value={{ notes, addNote, editNote, deleteNote, getNotes, loading,
-        setLoadingTrue,
-        setLoadingFalse,}}
-    >
-      {props.children}
-    </NoteContext.Provider>
-
+      <LoadingBar color="rgba(190, 129, 131,1)" ref={loadingBar} />
+      <NoteContext.Provider
+        value={{
+          notes,
+          addNote,
+          editNote,
+          deleteNote,
+          getNotes,
+          loading,
+          setLoadingTrue,
+          setLoadingFalse,
+        }}
+      >
+        {props.children}
+      </NoteContext.Provider>
     </>
   );
-  
 };
 
 export default NoteState;

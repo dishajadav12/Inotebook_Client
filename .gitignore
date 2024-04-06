@@ -10,6 +10,9 @@ node_modules
 
 # production
 /build
+1.png
+2.png
+3.png
 
 # misc
 .DS_Store
